@@ -69,6 +69,9 @@
 		8823110D1ADD56AF00016DBE /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 882310A01ADD50C900016DBE /* ParseFacebookUtilsV4.framework */; };
 		8823110E1ADD56AF00016DBE /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 882310A11ADD50C900016DBE /* ParseUI.framework */; };
 		8823110F1ADD56B500016DBE /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882310C01ADD515A00016DBE /* Quote.swift */; };
+		8864F3431ADD714400CA0AA2 /* Sanitizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864F3421ADD714400CA0AA2 /* Sanitizer.swift */; };
+		8864F3441ADD71A800CA0AA2 /* Sanitizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864F3421ADD714400CA0AA2 /* Sanitizer.swift */; };
+		8864F3451ADD721500CA0AA2 /* Sanitizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864F3421ADD714400CA0AA2 /* Sanitizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +152,7 @@
 		882310F51ADD569F00016DBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		882310F61ADD569F00016DBE /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		882310F81ADD569F00016DBE /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		8864F3421ADD714400CA0AA2 /* Sanitizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sanitizer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +263,7 @@
 				882310EA1ADD55B600016DBE /* Default */,
 				882310E81ADD559B00016DBE /* Entities */,
 				882310E91ADD55A700016DBE /* ViewControllers */,
+				8864F3411ADD712E00CA0AA2 /* Utilities */,
 			);
 			path = Quotables;
 			sourceTree = "<group>";
@@ -383,6 +388,14 @@
 				882310F51ADD569F00016DBE /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8864F3411ADD712E00CA0AA2 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8864F3421ADD714400CA0AA2 /* Sanitizer.swift */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -566,6 +579,7 @@
 				882310BF1ADD514900016DBE /* RootViewController.swift in Sources */,
 				882310C11ADD515A00016DBE /* Quote.swift in Sources */,
 				8823107C1ADD50AA00016DBE /* AppDelegate.swift in Sources */,
+				8864F3431ADD714400CA0AA2 /* Sanitizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,6 +597,7 @@
 			files = (
 				882310CB1ADD524D00016DBE /* ShareViewController.swift in Sources */,
 				882310E71ADD550600016DBE /* Quote.swift in Sources */,
+				8864F3451ADD721500CA0AA2 /* Sanitizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,6 +607,7 @@
 			files = (
 				882310F71ADD569F00016DBE /* TodayViewController.swift in Sources */,
 				8823110F1ADD56B500016DBE /* Quote.swift in Sources */,
+				8864F3441ADD71A800CA0AA2 /* Sanitizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -879,6 +895,7 @@
 				882310971ADD50AB00016DBE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		882310981ADD50AB00016DBE /* Build configuration list for PBXNativeTarget "QuotablesTests" */ = {
 			isa = XCConfigurationList;
@@ -887,6 +904,7 @@
 				8823109A1ADD50AB00016DBE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		882310D21ADD524D00016DBE /* Build configuration list for PBXNativeTarget "QuotableShare" */ = {
 			isa = XCConfigurationList;
@@ -895,6 +913,7 @@
 				882310D41ADD524D00016DBE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		882310FD1ADD569F00016DBE /* Build configuration list for PBXNativeTarget "QuotablesToday" */ = {
 			isa = XCConfigurationList;
@@ -903,6 +922,7 @@
 				882310FF1ADD569F00016DBE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

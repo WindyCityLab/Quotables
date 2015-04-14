@@ -26,7 +26,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     }
     
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
-        labelQuote.text = UIPasteboard.generalPasteboard().string
+        labelQuote.text = Sanitizer.sanitizeQuote(UIPasteboard.generalPasteboard().string!)
         if (labelQuote.text? == nil) {
             buttonSave.enabled = false
         } else {
@@ -37,6 +37,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     }
 
     
+
+
 
     @IBAction func onSaveButtonTap(sender: UIButton) {
         let quote = Quote()
