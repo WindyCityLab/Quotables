@@ -21,6 +21,10 @@ class ShareViewController: UIViewController, UITextFieldDelegate {
         fieldAuthor.delegate = self
         fieldQuote.text = Sanitizer.sanitizeQuote(UIPasteboard.generalPasteboard().string!)
         fieldQuote.becomeFirstResponder()
+
+
+        fieldAuthor.keyboardAppearance = UIKeyboardAppearance.Dark
+        fieldQuote.keyboardAppearance = UIKeyboardAppearance.Dark
     }
 
     func inspectInputParameters() {

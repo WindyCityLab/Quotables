@@ -26,6 +26,9 @@ class DetailViewController : UIViewController, UITextFieldDelegate {
         fieldAuthor.delegate = self
         fieldQuote.text = quote.text
         fieldAuthor.text = quote.author
+
+        fieldAuthor.keyboardAppearance = UIKeyboardAppearance.Dark
+        fieldQuote.keyboardAppearance = UIKeyboardAppearance.Dark
     }
 
     override func didReceiveMemoryWarning() {
