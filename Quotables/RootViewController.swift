@@ -58,8 +58,21 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let detail = segue.destinationViewController as DetailViewController
         detail.delegate = self
-        let indexPath = tableQuotes.indexPathForCell(sender as UITableViewCell)
-        detail.quote = quotes[indexPath!.row] as Quote
+        if(segue.identifier == "detailQuote") {
+            let indexPath = tableQuotes.indexPathForCell(sender as UITableViewCell)
+            detail.quote = quotes[indexPath!.row] as Quote
+        } else if(segue.identifier == "addQuote") {
+            let quote = Quote()
+            let pasteBoard = UIPasteboard.generalPasteboard().string
+            if pasteBoard != nil {
+                quote.text = Sanitizer.sanitizeQuote(pasteBoard!)
+            } else {
+                quote.text = ""
+            }
+            quote.author = ""
+            detail.quote = quote
+            detail.refreshData = true
+        }
 
     }
 

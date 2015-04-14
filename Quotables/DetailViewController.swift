@@ -16,6 +16,7 @@ class DetailViewController : UIViewController, UITextFieldDelegate {
 
     var quote: Quote = Quote()
     var delegate: DetailViewControllerDelegate?
+    var refreshData = false
 
     @IBOutlet var fieldQuote: UITextView!
     @IBOutlet var fieldAuthor: UITextField!
@@ -58,7 +59,7 @@ class DetailViewController : UIViewController, UITextFieldDelegate {
             if error != nil || !success {
                 println(error)
             } else {
-                self.dismissView(false)
+                self.dismissView(self.refreshData)
             }
         }
     }
