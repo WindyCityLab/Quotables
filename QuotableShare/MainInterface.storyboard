@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="j1y-V4-xli">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Share View Controller-->
+        <scene sceneID="ceB-am-kn3">
+            <objects>
+                <viewController id="j1y-V4-xli" customClass="ShareViewController" customModule="WindyCityShare" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8bI-gs-bmD"/>
+                        <viewControllerLayoutGuide type="bottom" id="d5i-Ba-RvD"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="wbc-yd-nQP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="83C-gW-99b">
+                                <rect key="frame" x="16" y="51" width="568" height="167"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="167" id="n2A-WB-ymc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Palatino-Italic" family="Palatino" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w1o-YY-6oJ">
+                                <rect key="frame" x="16" y="258" width="568" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="eJK-DQ-M1r"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYW-vm-FS0">
+                                <rect key="frame" x="16" y="20" width="55" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="ixl-hV-lAM"/>
+                                    <constraint firstAttribute="width" constant="55" id="yNE-2J-vLd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y1k-9s-6wI">
+                                <rect key="frame" x="16" y="229" width="65" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="huG-mN-ySn"/>
+                                    <constraint firstAttribute="height" constant="23" id="oJT-6F-61e"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.21848529933872099" green="0.31078430858829997" blue="0.38008432539682546" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="dYW-vm-FS0" firstAttribute="leading" secondItem="wbc-yd-nQP" secondAttribute="leadingMargin" id="2In-me-Hej"/>
+                            <constraint firstItem="83C-gW-99b" firstAttribute="trailing" secondItem="wbc-yd-nQP" secondAttribute="trailingMargin" id="9sI-Xh-CUO"/>
+                            <constraint firstItem="w1o-YY-6oJ" firstAttribute="trailing" secondItem="wbc-yd-nQP" secondAttribute="trailingMargin" id="H6q-si-KYh"/>
+                            <constraint firstItem="w1o-YY-6oJ" firstAttribute="top" secondItem="y1k-9s-6wI" secondAttribute="bottom" constant="6" id="Lqh-oV-H2i"/>
+                            <constraint firstItem="y1k-9s-6wI" firstAttribute="top" secondItem="83C-gW-99b" secondAttribute="bottom" constant="11" id="WDO-Gd-8Id"/>
+                            <constraint firstItem="83C-gW-99b" firstAttribute="leading" secondItem="wbc-yd-nQP" secondAttribute="leadingMargin" id="XyL-Ru-nHb"/>
+                            <constraint firstItem="83C-gW-99b" firstAttribute="top" secondItem="dYW-vm-FS0" secondAttribute="bottom" constant="8" id="Zf6-0M-0ok"/>
+                            <constraint firstItem="w1o-YY-6oJ" firstAttribute="leading" secondItem="wbc-yd-nQP" secondAttribute="leadingMargin" id="aqg-pt-lyN"/>
+                            <constraint firstItem="dYW-vm-FS0" firstAttribute="top" secondItem="8bI-gs-bmD" secondAttribute="bottom" id="eE9-Cq-Zcx"/>
+                            <constraint firstItem="y1k-9s-6wI" firstAttribute="leading" secondItem="wbc-yd-nQP" secondAttribute="leadingMargin" id="uPA-6N-7Gd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="fieldAuthor" destination="w1o-YY-6oJ" id="gLa-Pm-1Gs"/>
+                        <outlet property="fieldQuote" destination="83C-gW-99b" id="wmo-jF-gSr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CEy-Cv-SGf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="539" y="97"/>
+        </scene>
+    </scenes>
+</document>
