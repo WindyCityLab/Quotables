@@ -9,7 +9,7 @@
 import UIKit
 
 protocol DetailViewControllerDelegate {
-    func updateTable()
+    func updateTable(remoteUpdate: Bool)
 }
 
 class DetailViewController : UIViewController, UITextFieldDelegate {
@@ -32,7 +32,17 @@ class DetailViewController : UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func onButtonDismissTap(sender: UIButton) {
-        dismissView()
+        dismissView(false)
+    }
+
+    @IBAction func onButtonDeleteTap(sender: AnyObject) {
+        quote.deleteInBackgroundWithBlock { (success, error) -> Void in
+            if error != nil || !success {
+                println(error)
+            } else {
+                self.dismissView(true)
+            }
+        }
     }
 
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -45,16 +55,16 @@ class DetailViewController : UIViewController, UITextFieldDelegate {
         quote.text = fieldQuote.text
         quote.author = fieldAuthor.text
         quote.saveInBackgroundWithBlock { (success, error) -> Void in
-            if error != nil {
+            if error != nil || !success {
                 println(error)
             } else {
-                self.dismissView()
+                self.dismissView(false)
             }
         }
     }
 
-    func dismissView() {
-        delegate?.updateTable()
+    func dismissView(remoteUpdate: Bool) {
+        delegate?.updateTable(remoteUpdate)
         dismissViewControllerAnimated(true, completion: nil)
     }
 

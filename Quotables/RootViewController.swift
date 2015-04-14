@@ -29,7 +29,6 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         quoteQuery.findObjectsInBackgroundWithBlock { (quoteObjects, error) -> Void in
             if error == nil {
                 self.quotes = quoteObjects
-                println(self.quotes.count)
                 self.tableQuotes.reloadData()
             } else {
                 println(error)
@@ -64,8 +63,12 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     }
 
-    func updateTable() {
-        tableQuotes.reloadData()
+    func updateTable(remoteUpdate: Bool) {
+        if remoteUpdate {
+            loadQuotes()
+        } else {
+            tableQuotes.reloadData()
+        }
     }
 
 

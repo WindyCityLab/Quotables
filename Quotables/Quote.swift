@@ -22,5 +22,4 @@ class Quote : PFObject, PFSubclassing {
     class func parseClassName() -> String! {
         return "Quote"
     }
-    
 }

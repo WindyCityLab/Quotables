@@ -8,7 +8,7 @@
         <!--Root View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="RootViewController" customModule="WindyCityLabs" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="RootViewController" customModule="Quotables" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -85,7 +85,7 @@
         <!--Detail View Controller-->
         <scene sceneID="u9p-gN-EWS">
             <objects>
-                <viewController id="sr9-JX-sDG" customClass="DetailViewController" customModule="WindyCityLabs" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="sr9-JX-sDG" customClass="DetailViewController" customModule="Quotables" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2EB-Rv-Ghk"/>
                         <viewControllerLayoutGuide type="bottom" id="6CZ-G0-NNV"/>
@@ -129,10 +129,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gzU-oc-Z1A">
-                                <rect key="frame" x="256" y="557" width="89" height="35"/>
+                                <rect key="frame" x="16" y="557" width="89" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="BYe-BF-FnR"/>
-                                    <constraint firstAttribute="width" constant="89" id="yhl-Yh-XGb"/>
+                                    <constraint firstAttribute="height" constant="35" id="6Xo-ug-Gnh"/>
+                                    <constraint firstAttribute="width" constant="89" id="ub9-no-V9b"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="20"/>
                                 <state key="normal" title="DISMISS">
@@ -143,21 +143,38 @@
                                     <action selector="onButtonDismissTap:" destination="sr9-JX-sDG" eventType="touchUpInside" id="hJq-IK-KeL"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="09A-lb-flf">
+                                <rect key="frame" x="505" y="557" width="79" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="2Zk-v4-pF5"/>
+                                    <constraint firstAttribute="width" constant="79" id="rZZ-1K-7Q0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="20"/>
+                                <state key="normal" title="DELETE">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onButtonDeleteTap:" destination="sr9-JX-sDG" eventType="touchUpInside" id="DPH-07-YEh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.21848529929999999" green="0.3107843086" blue="0.38008432539999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="6CZ-G0-NNV" firstAttribute="top" secondItem="09A-lb-flf" secondAttribute="bottom" constant="8" id="0er-be-edV"/>
                             <constraint firstItem="Yn8-7c-hIU" firstAttribute="top" secondItem="2EB-Rv-Ghk" secondAttribute="bottom" id="26p-kQ-6fl"/>
                             <constraint firstItem="cOQ-SV-LZM" firstAttribute="leading" secondItem="EQC-Cn-jcY" secondAttribute="leadingMargin" id="7IG-vN-ch2"/>
                             <constraint firstItem="WM5-8w-rpB" firstAttribute="leading" secondItem="EQC-Cn-jcY" secondAttribute="leadingMargin" id="CSj-Oo-4y2"/>
                             <constraint firstItem="3hD-91-fdR" firstAttribute="trailing" secondItem="EQC-Cn-jcY" secondAttribute="trailingMargin" id="Ixj-9G-MWB"/>
-                            <constraint firstItem="6CZ-G0-NNV" firstAttribute="top" secondItem="gzU-oc-Z1A" secondAttribute="bottom" constant="8" id="Lzw-DN-mjh"/>
                             <constraint firstItem="3hD-91-fdR" firstAttribute="leading" secondItem="EQC-Cn-jcY" secondAttribute="leadingMargin" id="OEa-We-q69"/>
                             <constraint firstItem="Yn8-7c-hIU" firstAttribute="leading" secondItem="EQC-Cn-jcY" secondAttribute="leadingMargin" id="RFZ-wQ-uJC"/>
-                            <constraint firstAttribute="centerX" secondItem="gzU-oc-Z1A" secondAttribute="centerX" id="Y6J-YJ-pVT"/>
                             <constraint firstItem="WM5-8w-rpB" firstAttribute="trailing" secondItem="EQC-Cn-jcY" secondAttribute="trailingMargin" id="Z7T-B6-rB6"/>
+                            <constraint firstItem="6CZ-G0-NNV" firstAttribute="top" secondItem="gzU-oc-Z1A" secondAttribute="bottom" constant="8" id="bV2-Vf-ohv"/>
+                            <constraint firstItem="gzU-oc-Z1A" firstAttribute="leading" secondItem="EQC-Cn-jcY" secondAttribute="leadingMargin" id="bWt-Ts-sUy"/>
                             <constraint firstItem="WM5-8w-rpB" firstAttribute="top" secondItem="cOQ-SV-LZM" secondAttribute="bottom" constant="6" id="fdr-eq-etB"/>
                             <constraint firstItem="3hD-91-fdR" firstAttribute="top" secondItem="Yn8-7c-hIU" secondAttribute="bottom" constant="8" id="hJe-BZ-hwL"/>
                             <constraint firstItem="cOQ-SV-LZM" firstAttribute="top" secondItem="3hD-91-fdR" secondAttribute="bottom" constant="11" id="rM8-H7-OoG"/>
+                            <constraint firstItem="09A-lb-flf" firstAttribute="trailing" secondItem="EQC-Cn-jcY" secondAttribute="trailingMargin" id="xTf-i4-R4g"/>
                         </constraints>
                     </view>
                     <connections>
@@ -167,7 +184,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fwc-nT-F0B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1347" y="375"/>
+            <point key="canvasLocation" x="1337" y="303"/>
         </scene>
     </scenes>
 </document>
