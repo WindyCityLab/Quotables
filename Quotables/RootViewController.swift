@@ -13,9 +13,14 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet var tableQuotes: UITableView!
 
     var quotes: NSArray = []
+    var refreshControl = UIRefreshControl()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        refreshControl.addTarget(self, action: "refreshQuotes:", forControlEvents: UIControlEvents.ValueChanged)
+        self.tableQuotes.addSubview(refreshControl)
+
         loadNavbarTheme()
         loadQuotes()
     }
@@ -30,6 +35,12 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         nav?.barStyle = UIBarStyle.BlackTranslucent
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Palatino", size: 20)!]
         nav?.titleTextAttributes = titleDict
+    }
+
+
+    func refreshQuotes(forControlEvents: UIControlEvents) {
+        loadQuotes()
+        refreshControl.endRefreshing()
     }
 
     func loadQuotes() {

@@ -13,6 +13,7 @@ import Parse
 class Quote : PFObject, PFSubclassing {
     @NSManaged var text: String
     @NSManaged var author: String
+    @NSManaged var uniqueContent: String
 
     override class func load()
     {
