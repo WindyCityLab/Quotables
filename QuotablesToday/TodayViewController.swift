@@ -27,11 +27,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
         labelQuote.text = Sanitizer.sanitizeQuote(UIPasteboard.generalPasteboard().string!)
-        if (labelQuote.text? == nil) {
-            buttonSave.enabled = false
-        } else {
-            buttonSave.enabled = true
-        }
 
         completionHandler(NCUpdateResult.NewData)
     }
@@ -50,8 +45,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             } else {
                 println("SAVING SUCCESSFUL")
                 self.labelQuote.text = ""
-                self.buttonSave.enabled = false
-                UIPasteboard.generalPasteboard().string = ""
             }
         }
     }

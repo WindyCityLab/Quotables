@@ -27,7 +27,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k3X-xu-K2x">
-                                <rect key="frame" x="204" y="122" width="81" height="30"/>
+                                <rect key="frame" x="150" y="122" width="81" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="81" id="loC-7b-A6p"/>
                                 </constraints>
@@ -43,7 +43,7 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="Oqf-5K-5Wu" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="44v-ho-0Ot"/>
-                            <constraint firstItem="k3X-xu-K2x" firstAttribute="trailing" secondItem="S3S-Oj-5AN" secondAttribute="trailingMargin" constant="-19" id="DZE-7b-ZBd"/>
+                            <constraint firstItem="k3X-xu-K2x" firstAttribute="trailing" secondItem="S3S-Oj-5AN" secondAttribute="trailingMargin" constant="-73" id="DZE-7b-ZBd"/>
                             <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="k3X-xu-K2x" secondAttribute="bottom" constant="8" id="G2v-0o-Ut2"/>
                             <constraint firstItem="k3X-xu-K2x" firstAttribute="top" secondItem="Oqf-5K-5Wu" secondAttribute="bottom" constant="8" id="P1b-f2-QK2"/>
                             <constraint firstItem="Oqf-5K-5Wu" firstAttribute="trailing" secondItem="S3S-Oj-5AN" secondAttribute="trailingMargin" constant="-19" id="jCA-cz-VR7"/>
