@@ -19,7 +19,9 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="180" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hpF-gR-J08">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.23798652640000001" green="0.30507200270000001" blue="0.392547123" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <color key="sectionIndexBackgroundColor" red="0.21848529929999999" green="0.3107843086" blue="0.38008432539999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="QuoteCell" rowHeight="180" id="g8G-lY-j0t">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -56,6 +58,8 @@
                                                 <constraint firstItem="Gdt-ji-P57" firstAttribute="leading" secondItem="jD0-RJ-sDy" secondAttribute="leadingMargin" constant="22" id="v1e-LQ-L4N"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.21848529929999999" green="0.3107843086" blue="0.38008432539999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
                                             <segue destination="sr9-JX-sDG" kind="presentation" identifier="detailQuote" modalTransitionStyle="flipHorizontal" id="esk-8h-vod"/>
                                         </connections>
@@ -67,7 +71,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.21848529929999999" green="0.3107843086" blue="0.38008432539999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="hpF-gR-J08" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="2qZ-ad-yde"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hpF-gR-J08" secondAttribute="trailing" constant="-16" id="Edl-vH-eTc"/>
