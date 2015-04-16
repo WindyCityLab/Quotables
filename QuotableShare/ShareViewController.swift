@@ -27,17 +27,6 @@ class ShareViewController: UIViewController, UITextFieldDelegate {
         fieldQuote.keyboardAppearance = UIKeyboardAppearance.Dark
     }
 
-    func inspectInputParameters() {
-        let context = self.extensionContext
-        for item in context?.inputItems as [NSExtensionItem] {
-            for provider in item.attachments as [NSItemProvider] {
-                for identifier in provider.registeredTypeIdentifiers as [String] {
-                    println(identifier)
-                }
-            }
-        }
-    }
-
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         self.extensionContext!.completeRequestReturningItems([], completionHandler: nil)
@@ -46,7 +35,7 @@ class ShareViewController: UIViewController, UITextFieldDelegate {
     }
 
     func saveQuote() {
-        let quote = Quote()
+        let quote = Quote(className: "Quote")
         quote.text = fieldQuote.text
         quote.author = fieldAuthor.text
         quote.saveInBackgroundWithBlock { (success, error) -> Void in

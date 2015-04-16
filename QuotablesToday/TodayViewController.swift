@@ -36,9 +36,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 
 
     @IBAction func onSaveButtonTap(sender: UIButton) {
-        let quote = Quote()
+        let quote = Quote(className: "Quote")
         quote.text = labelQuote.text!
-        quote.author = "EDIT REQUIRED"
+//        quote.author = "EDIT REQUIRED"
         quote.saveInBackgroundWithBlock { (success, error) -> Void in
             if error != nil && !success {
                 println("ERROR SAVING QUOTE FROM TODAY EXTENSION")

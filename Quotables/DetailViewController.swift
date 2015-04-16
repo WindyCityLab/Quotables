@@ -14,7 +14,7 @@ protocol DetailViewControllerDelegate {
 
 class DetailViewController : UIViewController, UITextFieldDelegate {
 
-    var quote: Quote = Quote()
+    var quote: Quote = Quote(className: "Quote")
     var delegate: DetailViewControllerDelegate?
     var refreshData = false
 

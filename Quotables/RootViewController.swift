@@ -34,7 +34,7 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         let nav = self.navigationController?.navigationBar
         nav?.barStyle = UIBarStyle.BlackTranslucent
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Palatino", size: 20)!]
-        nav?.titleTextAttributes = titleDict
+        nav?.titleTextAttributes = titleDict as [NSObject : AnyObject]
     }
 
 
@@ -45,9 +45,9 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     func loadQuotes() {
         let quoteQuery = Quote.query()
-        quoteQuery.findObjectsInBackgroundWithBlock { (quoteObjects, error) -> Void in
+        quoteQuery!.findObjectsInBackgroundWithBlock { (quoteObjects, error) -> Void in
             if error == nil {
-                self.quotes = quoteObjects
+                self.quotes = quoteObjects!
                 self.tableQuotes.reloadData()
             } else {
                 println(error)
@@ -57,13 +57,13 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableQuotes.dequeueReusableCellWithIdentifier("QuoteCell", forIndexPath: indexPath) as UITableViewCell
-        let quote = quotes[indexPath.row] as Quote
+        let cell = tableQuotes.dequeueReusableCellWithIdentifier("QuoteCell", forIndexPath: indexPath) as! UITableViewCell
+        let quote = quotes[indexPath.row] as! Quote
 
-        let labelQuote = self.view.viewWithTag(100) as UILabel
+        let labelQuote = self.view.viewWithTag(100) as! UILabel
         labelQuote.text = "\"\(quote.text)\""
 
-        let labelAuthor = self.view.viewWithTag(110) as UILabel
+        let labelAuthor = self.view.viewWithTag(110) as! UILabel
         labelAuthor.text = "- \(quote.author)"
 
 
@@ -75,11 +75,11 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let detail = segue.destinationViewController as DetailViewController
+        let detail = segue.destinationViewController as! DetailViewController
         detail.delegate = self
         if(segue.identifier == "detailQuote") {
-            let indexPath = tableQuotes.indexPathForCell(sender as UITableViewCell)
-            detail.quote = quotes[indexPath!.row] as Quote
+            let indexPath = tableQuotes.indexPathForCell(sender as! UITableViewCell)
+            detail.quote = quotes[indexPath!.row] as! Quote
         } else if(segue.identifier == "addQuote") {
             let quote = Quote()
             let pasteBoard = UIPasteboard.generalPasteboard().string

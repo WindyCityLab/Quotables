@@ -11,16 +11,24 @@ import Parse
 
 
 class Quote : PFObject, PFSubclassing {
-    @NSManaged var text: String
-    @NSManaged var author: String
-    @NSManaged var uniqueContent: String
+    @NSManaged var text: String!
+    @NSManaged var author: String!
+    @NSManaged var uniqueContent: String!
 
-    override class func load()
+    override class func initialize()
     {
-        self.registerSubclass()
+        registerSubclass()
     }
 
-    class func parseClassName() -> String! {
+    class func parseClassName() -> String {
         return "Quote"
+    }
+
+    func getAuthor() -> String {
+        if (self.author != nil) {
+            return author
+        } else {
+            return "EDIT REQUIRED"
+        }
     }
 }
