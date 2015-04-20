@@ -59,4 +59,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         }
 
     }
+    
+    @IBAction func onEditButtonTap(sender: AnyObject) {
+        extensionContext?.openURL(NSURL(fileURLWithPath: "quotable://home")!, completionHandler: nil)
+    }
 }

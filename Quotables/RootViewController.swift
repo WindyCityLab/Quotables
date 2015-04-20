@@ -93,10 +93,13 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let detail = segue.destinationViewController as! DetailViewController
         detail.delegate = self
-        if(segue.identifier == "detailQuote") {
+
+        switch segue.identifier! {
+        case "detailQuote":
             let indexPath = tableQuotes.indexPathForCell(sender as! UITableViewCell)
             detail.quote = quotes[indexPath!.row] as! Quote
-        } else if(segue.identifier == "addQuote") {
+
+        case "addQuote":
             if let text = UIPasteboard.generalPasteboard().string {
                 detail.quote = Quote.makeQuote(text)
             } else {
@@ -104,6 +107,8 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
 
             detail.refreshData = true
+
+        default: ()
         }
 
     }
@@ -115,7 +120,7 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
             tableQuotes.reloadData()
         }
     }
-
-
+    
+    
 }
 

@@ -43,7 +43,11 @@ class DetailViewController : UIViewController, UITextFieldDelegate {
         super.didReceiveMemoryWarning()
     }
 
-    @IBAction func onButtonDismissTap(sender: UIButton) {
+    @IBAction func onButtonSaveTap(sender: AnyObject) {
+        saveQuote()
+    }
+
+    @IBAction func onButtonCancelTap(sender: AnyObject) {
         dismissView(false)
     }
 

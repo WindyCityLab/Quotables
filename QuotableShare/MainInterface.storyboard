@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="j1y-V4-xli">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="j1y-V4-xli">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Share View Controller-->
         <scene sceneID="ceB-am-kn3">
             <objects>
-                <viewController id="j1y-V4-xli" customClass="ShareViewController" customModule="WindyCityShare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="j1y-V4-xli" customClass="ShareViewController" customModule="QuotableShare" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8bI-gs-bmD"/>
                         <viewControllerLayoutGuide type="bottom" id="d5i-Ba-RvD"/>
@@ -54,18 +54,52 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7nf-C2-tDN">
+                                <rect key="frame" x="16" y="296" width="53" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="53" id="PMQ-6d-D3u"/>
+                                    <constraint firstAttribute="height" constant="35" id="Sqg-ol-OcK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="20"/>
+                                <state key="normal" title="SAVE">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onButtonSaveTap:" destination="j1y-V4-xli" eventType="touchUpInside" id="KNP-7W-x2B"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zju-UV-sQQ">
+                                <rect key="frame" x="95" y="296" width="86" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="SSc-7e-tIi"/>
+                                    <constraint firstAttribute="width" constant="86" id="tkY-cQ-wce"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="20"/>
+                                <state key="normal" title="CANCEL">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onButtonCancelTap:" destination="j1y-V4-xli" eventType="touchUpInside" id="TAP-k4-qt4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.21848529933872099" green="0.31078430858829997" blue="0.38008432539682546" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="7nf-C2-tDN" firstAttribute="leading" secondItem="wbc-yd-nQP" secondAttribute="leadingMargin" id="0kE-gK-KfR"/>
                             <constraint firstItem="dYW-vm-FS0" firstAttribute="leading" secondItem="wbc-yd-nQP" secondAttribute="leadingMargin" id="2In-me-Hej"/>
                             <constraint firstItem="83C-gW-99b" firstAttribute="trailing" secondItem="wbc-yd-nQP" secondAttribute="trailingMargin" id="9sI-Xh-CUO"/>
                             <constraint firstItem="w1o-YY-6oJ" firstAttribute="trailing" secondItem="wbc-yd-nQP" secondAttribute="trailingMargin" id="H6q-si-KYh"/>
+                            <constraint firstItem="7nf-C2-tDN" firstAttribute="top" secondItem="w1o-YY-6oJ" secondAttribute="bottom" constant="8" id="Kfx-NE-Hfn"/>
                             <constraint firstItem="w1o-YY-6oJ" firstAttribute="top" secondItem="y1k-9s-6wI" secondAttribute="bottom" constant="6" id="Lqh-oV-H2i"/>
                             <constraint firstItem="y1k-9s-6wI" firstAttribute="top" secondItem="83C-gW-99b" secondAttribute="bottom" constant="11" id="WDO-Gd-8Id"/>
                             <constraint firstItem="83C-gW-99b" firstAttribute="leading" secondItem="wbc-yd-nQP" secondAttribute="leadingMargin" id="XyL-Ru-nHb"/>
                             <constraint firstItem="83C-gW-99b" firstAttribute="top" secondItem="dYW-vm-FS0" secondAttribute="bottom" constant="8" id="Zf6-0M-0ok"/>
                             <constraint firstItem="w1o-YY-6oJ" firstAttribute="leading" secondItem="wbc-yd-nQP" secondAttribute="leadingMargin" id="aqg-pt-lyN"/>
                             <constraint firstItem="dYW-vm-FS0" firstAttribute="top" secondItem="8bI-gs-bmD" secondAttribute="bottom" id="eE9-Cq-Zcx"/>
+                            <constraint firstItem="Zju-UV-sQQ" firstAttribute="leading" secondItem="7nf-C2-tDN" secondAttribute="trailing" constant="26" id="op7-Pc-kn6"/>
+                            <constraint firstItem="Zju-UV-sQQ" firstAttribute="top" secondItem="w1o-YY-6oJ" secondAttribute="bottom" constant="8" id="paB-bv-JIk"/>
                             <constraint firstItem="y1k-9s-6wI" firstAttribute="leading" secondItem="wbc-yd-nQP" secondAttribute="leadingMargin" id="uPA-6N-7Gd"/>
                         </constraints>
                     </view>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-
+// create an extension for all!
 
 func minimumFontSizeForView(width: CGFloat, height: CGFloat) -> (UIView -> Bool) {
     return {view in

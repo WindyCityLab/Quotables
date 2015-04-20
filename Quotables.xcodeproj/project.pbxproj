@@ -155,6 +155,7 @@
 		882310F81ADD569F00016DBE /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		88245AA31AE5653700BFF453 /* Quotables-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Quotables-Bridging-Header.h"; sourceTree = "<group>"; };
 		88245AA41AE56D1E00BFF453 /* InterfaceUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceUtil.swift; sourceTree = "<group>"; };
+		88245AA61AE5902D00BFF453 /* libcommonCrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcommonCrypto.dylib; path = usr/lib/system/libcommonCrypto.dylib; sourceTree = SDKROOT; };
 		8864F3421ADD714400CA0AA2 /* StringUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -300,6 +301,7 @@
 		8823109B1ADD50B000016DBE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				88245AA61AE5902D00BFF453 /* libcommonCrypto.dylib */,
 				882310BA1ADD511C00016DBE /* AudioToolbox.framework */,
 				882310B81ADD511800016DBE /* CFNetwork.framework */,
 				882310B61ADD511200016DBE /* CoreLocation.framework */,
@@ -875,6 +877,10 @@
 				);
 				INFOPLIST_FILE = QuotablesToday/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/system",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Quotables/Quotables-Bridging-Header.h";
@@ -893,6 +899,10 @@
 				);
 				INFOPLIST_FILE = QuotablesToday/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/system",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Quotables/Quotables-Bridging-Header.h";

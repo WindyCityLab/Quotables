@@ -26,7 +26,7 @@ class ShareViewController: UIViewController, UITextFieldDelegate {
             fieldAuthor.text = quote.author
         }
 
-        fieldQuote.becomeFirstResponder()
+        fieldAuthor.becomeFirstResponder()
 
         fieldAuthor.keyboardAppearance = UIKeyboardAppearance.Dark
         fieldQuote.keyboardAppearance = UIKeyboardAppearance.Dark
@@ -37,6 +37,15 @@ class ShareViewController: UIViewController, UITextFieldDelegate {
         self.extensionContext!.completeRequestReturningItems([], completionHandler: nil)
         saveQuote()
         return true
+    }
+
+    @IBAction func onButtonSaveTap(sender: AnyObject) {
+        self.extensionContext!.completeRequestReturningItems([], completionHandler: nil)
+        saveQuote()
+    }
+
+    @IBAction func onButtonCancelTap(sender: AnyObject) {
+        self.extensionContext!.completeRequestReturningItems([], completionHandler: nil)
     }
 
     func saveQuote() {

@@ -13,10 +13,8 @@ import Parse
 class Quote : PFObject, PFSubclassing {
     @NSManaged var text: String!
     @NSManaged var author: String!
-    @NSManaged var uniqueContent: String!
 
-    override class func initialize()
-    {
+    override class func initialize() {
         registerSubclass()
     }
 
@@ -33,7 +31,7 @@ class Quote : PFObject, PFSubclassing {
     }
 
     class func makeQuote(input: String) -> Quote {
-        let quote = Quote(className: "Quote")
+        let quote = Quote()
         let text = sanitizeQuote(input)
         quote.author = getPersonName(text)
         quote.text = removeRegex(text, quote.author)
