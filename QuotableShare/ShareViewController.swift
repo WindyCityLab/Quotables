@@ -17,7 +17,7 @@ class ShareViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        Parse.setApplicationId("OL0i1OhDkRscie1SlaqRinQsn78CwY4gL1vThHaF", clientKey: "vIuRlq40qlDDCYffI8yeTd7aixpQB4vGVnKYoBKu")
+        Parse.setApplicationId(PARSE_APP_ID, clientKey: PARSE_CLIENT_ID)
         fieldAuthor.delegate = self
 
         if let text = UIPasteboard.generalPasteboard().string {

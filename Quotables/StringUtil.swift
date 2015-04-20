@@ -7,14 +7,6 @@
 //
 import Foundation
 
-let EXCLUDE_REGEX = ["Read more at http.+$", "Excerpt From:.+$"]
-let EXCLUDE_CHARS = ["\n", "“", "”", "―"]
-
-let NLP_ENGLISH = "en"
-let POS_PERSON = "PersonalName"
-
-let SINGLE_SPACE = " "
-
 
 func removeRegex(input: String, regex: String) -> String {
     var str = String(input)
@@ -42,7 +34,7 @@ func getPersonName(str: String) -> String {
     let options: NSLinguisticTaggerOptions = .OmitWhitespace | .OmitPunctuation | .JoinNames
     let schemes = NSLinguisticTagger.availableTagSchemesForLanguage(NLP_ENGLISH)
     let tagger = NSLinguisticTagger(tagSchemes: schemes, options: Int(options.rawValue))
-    var personName = "Anonymous"
+    var personName = ANON
     tagger.string = str
     tagger.enumerateTagsInRange(NSMakeRange(0, (str as NSString).length), scheme: NSLinguisticTagSchemeNameTypeOrLexicalClass, options: options) { (tag, tokenRange, sentenceRange, _) in
         let token = (str as NSString).substringWithRange(tokenRange)

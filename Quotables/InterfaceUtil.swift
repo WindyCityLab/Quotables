@@ -14,7 +14,7 @@ func minimumFontSizeForView(width: CGFloat, height: CGFloat) -> (UIView -> Bool)
     }
 }
 
-let minimumSizeExceeded = minimumFontSizeForView(400, 700)
+let minimumSizeExceeded = minimumFontSizeForView(MIN_WIDTH, MIN_HEIGHT)
 
 func loadNavbarTheme(view: UIView, navigationBar: UINavigationBar) {
     navigationBar.barStyle = UIBarStyle.BlackTranslucent

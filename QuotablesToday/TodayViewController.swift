@@ -19,7 +19,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        Parse.setApplicationId("OL0i1OhDkRscie1SlaqRinQsn78CwY4gL1vThHaF", clientKey: "vIuRlq40qlDDCYffI8yeTd7aixpQB4vGVnKYoBKu")
+        Parse.setApplicationId(PARSE_APP_ID, clientKey: PARSE_CLIENT_ID)
 
         buttonSave.hidden = true
     }
@@ -34,7 +34,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             if let text = UIPasteboard.generalPasteboard().string {
                 quote = Quote.makeQuote(text)
                 if quote.author.isEmpty {
-                   quote.author = "Anonymous"
+                   quote.author = ANON
                 }
 
                 if !quote.text.isEmpty {
@@ -51,9 +51,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     @IBAction func onSaveButtonTap(sender: UIButton) {
         quote.saveInBackgroundWithBlock { (success, error) -> Void in
             if error != nil && !success {
-                println("ERROR SAVING QUOTE FROM TODAY EXTENSION")
+                println("ERROR: \(error)")
             } else {
-                println("SAVING SUCCESSFUL")
                 self.labelQuote.text = ""
                 self.buttonSave.hidden = true
             }
@@ -62,6 +61,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     }
     
     @IBAction func onEditButtonTap(sender: AnyObject) {
-        extensionContext?.openURL(NSURL(fileURLWithPath: "quotable://detail")!, completionHandler: nil)
+        extensionContext?.openURL(NSURL(fileURLWithPath: APP_URL)!, completionHandler: nil)
     }
 }
