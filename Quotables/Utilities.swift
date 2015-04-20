@@ -24,7 +24,7 @@ func removeRegex(input: String, regex: String) -> String {
 }
 
 func sanitizeQuote(quote: String) -> String {
-    let regexArray = ["Read more at http.+$"]
+    let regexArray = ["Read more at http.+$", "Excerpt From:.+$"]
     var str = String(quote)
     let targets = ["\n", "“", "”", "―"]
     for target in targets {
