@@ -33,6 +33,7 @@ class DetailViewController : UIViewController, UITextFieldDelegate {
         fieldAuthor.delegate = self
         fieldQuote.text = quote.text
         fieldAuthor.text = quote.author
+        fieldAuthor.becomeFirstResponder()
 
         fieldAuthor.keyboardAppearance = UIKeyboardAppearance.Dark
         fieldQuote.keyboardAppearance = UIKeyboardAppearance.Dark
