@@ -74,10 +74,10 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         let quote = quotes[indexPath.row] as! Quote
 
         let labelQuote = self.view.viewWithTag(100) as! UILabel
-        labelQuote.text = "\"\(quote.text)\""
+        labelQuote.text = quote.text
 
         let labelAuthor = self.view.viewWithTag(110) as! UILabel
-        labelAuthor.text = "- \(quote.author)"
+        labelAuthor.text = quote.author
 
         if increaseFontSize {
             adjustFontSize(labelQuote, 28)
