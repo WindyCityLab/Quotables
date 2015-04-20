@@ -31,7 +31,11 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         if let text = UIPasteboard.generalPasteboard().string {
             if let text = UIPasteboard.generalPasteboard().string {
                 let quote = Quote.makeQuote(text)
-                if !quote.text.isEmpty && !quote.text.isEmpty {
+                if quote.author.isEmpty {
+                   quote.author = "Anonymous"
+                }
+
+                if !quote.text.isEmpty {
                     labelQuote.text = "\(quote.text)\n\n\(quote.author)"
                     buttonSave.hidden = false
                 }
