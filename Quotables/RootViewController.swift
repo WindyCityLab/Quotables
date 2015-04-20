@@ -81,7 +81,7 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         if increaseFontSize {
             adjustFontSize(labelQuote, 28)
-            adjustFontSize(labelAuthor, 22)
+            adjustFontSize(labelAuthor, 24)
         }
 
         return cell
