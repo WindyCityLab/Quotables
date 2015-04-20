@@ -46,7 +46,6 @@ func getPersonName(str: String) -> String {
     tagger.string = str
     tagger.enumerateTagsInRange(NSMakeRange(0, (str as NSString).length), scheme: NSLinguisticTagSchemeNameTypeOrLexicalClass, options: options) { (tag, tokenRange, sentenceRange, _) in
         let token = (str as NSString).substringWithRange(tokenRange)
-        println("[\(token)|\(tag)]")
         if tag == "PersonalName" {
             personName = token
         }

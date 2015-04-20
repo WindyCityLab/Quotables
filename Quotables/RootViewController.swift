@@ -98,14 +98,7 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
             let indexPath = tableQuotes.indexPathForCell(sender as! UITableViewCell)
             detail.quote = quotes[indexPath!.row] as! Quote
         } else if(segue.identifier == "addQuote") {
-            let quote = Quote()
-            let pasteBoard = UIPasteboard.generalPasteboard().string
-            if pasteBoard != nil {
-                quote.text = sanitizeQuote(pasteBoard!)
-            } else {
-                quote.text = ""
-            }
-            quote.author = ""
+            let quote = Quote.makeQuote(UIPasteboard.generalPasteboard().string! as String)
             detail.quote = quote
             detail.refreshData = true
         }
