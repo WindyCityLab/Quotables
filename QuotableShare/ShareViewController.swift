@@ -19,9 +19,10 @@ class ShareViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         Parse.setApplicationId("OL0i1OhDkRscie1SlaqRinQsn78CwY4gL1vThHaF", clientKey: "vIuRlq40qlDDCYffI8yeTd7aixpQB4vGVnKYoBKu")
         fieldAuthor.delegate = self
-        fieldQuote.text = sanitizeQuote(UIPasteboard.generalPasteboard().string!)
+        let quote = Quote.makeQuote(UIPasteboard.generalPasteboard().string! as String)
+        fieldQuote.text = quote.text
+        fieldAuthor.text = quote.author
         fieldQuote.becomeFirstResponder()
-
 
         fieldAuthor.keyboardAppearance = UIKeyboardAppearance.Dark
         fieldQuote.keyboardAppearance = UIKeyboardAppearance.Dark

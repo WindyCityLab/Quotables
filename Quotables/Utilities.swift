@@ -8,29 +8,31 @@
 
 import UIKit
 
-func applyRegex(input: String, regex: String) -> String {
+
+func adjustFontSize(label: UILabel, size: CGFloat) {
+    let font = label.font.fontWithSize(size)
+    label.font = font
+}
+
+func removeRegex(input: String, regex: String) -> String {
     var str = String(input)
     if let match = str.rangeOfString(regex, options: .RegularExpressionSearch){
         str.removeRange(match)
     }
 
-    return str
+    return str.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
 }
 
 func sanitizeQuote(quote: String) -> String {
-    let regexArray = ["Read more at http.+$"]
-    var str = String(quote)
+    let regexArray = ["Read more at http.+$", "\\n"]
+    var str = String(quote.stringByReplacingOccurrencesOfString("\n", withString: " "))
     for regex in regexArray {
-        str = applyRegex(str, regex)
+        str = removeRegex(str, regex)
     }
 
     return str
 }
 
-func adjustFontSize(label: UILabel, size: CGFloat) {
-        let font = label.font.fontWithSize(size)
-        label.font = font
-}
 
 func getPersonName(str: String) -> String {
     let options: NSLinguisticTaggerOptions = .OmitWhitespace | .OmitPunctuation | .JoinNames
@@ -47,3 +49,4 @@ func getPersonName(str: String) -> String {
 
     return personName
 }
+

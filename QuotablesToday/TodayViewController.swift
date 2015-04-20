@@ -27,19 +27,11 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
         labelQuote.text = sanitizeQuote(UIPasteboard.generalPasteboard().string!)
-
-        println(labelQuote.text)
         completionHandler(NCUpdateResult.NewData)
     }
 
-    
-
-
-
     @IBAction func onSaveButtonTap(sender: UIButton) {
-        let quote = Quote(className: "Quote")
-        quote.text = labelQuote.text!
-//        quote.author = "EDIT REQUIRED"
+        let quote = Quote.makeQuote(labelQuote.text!)
         quote.saveInBackgroundWithBlock { (success, error) -> Void in
             if error != nil && !success {
                 println("ERROR SAVING QUOTE FROM TODAY EXTENSION")

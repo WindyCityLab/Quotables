@@ -31,4 +31,12 @@ class Quote : PFObject, PFSubclassing {
             return "EDIT REQUIRED"
         }
     }
+
+    class func makeQuote(input: String) -> Quote {
+        let quote = Quote(className: "Quote")
+        let text = sanitizeQuote(input)
+        quote.author = getPersonName(text)
+        quote.text = removeRegex(text, quote.author)
+        return quote
+    }
 }
