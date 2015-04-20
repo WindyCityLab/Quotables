@@ -24,15 +24,19 @@ func removeRegex(input: String, regex: String) -> String {
 }
 
 func sanitizeQuote(quote: String) -> String {
-    let regexArray = ["Read more at http.+$", "\\n"]
-    var str = String(quote.stringByReplacingOccurrencesOfString("\n", withString: " "))
+    let regexArray = ["Read more at http.+$"]
+    var str = String(quote)
+    let targets = ["\n", "“", "”", "―"]
+    for target in targets {
+        str = str.stringByReplacingOccurrencesOfString(target, withString: " ")
+    }
+
     for regex in regexArray {
         str = removeRegex(str, regex)
     }
 
     return str
 }
-
 
 func getPersonName(str: String) -> String {
     let options: NSLinguisticTaggerOptions = .OmitWhitespace | .OmitPunctuation | .JoinNames
@@ -42,6 +46,7 @@ func getPersonName(str: String) -> String {
     tagger.string = str
     tagger.enumerateTagsInRange(NSMakeRange(0, (str as NSString).length), scheme: NSLinguisticTagSchemeNameTypeOrLexicalClass, options: options) { (tag, tokenRange, sentenceRange, _) in
         let token = (str as NSString).substringWithRange(tokenRange)
+        println("[\(token)|\(tag)]")
         if tag == "PersonalName" {
             personName = token
         }
@@ -49,4 +54,3 @@ func getPersonName(str: String) -> String {
 
     return personName
 }
-

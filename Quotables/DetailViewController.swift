@@ -14,7 +14,7 @@ protocol DetailViewControllerDelegate {
 
 class DetailViewController : UIViewController, UITextFieldDelegate {
 
-    var quote: Quote = Quote(className: "Quote")
+    var quote: Quote = Quote.makeQuote(UIPasteboard.generalPasteboard().string! as String)
     var delegate: DetailViewControllerDelegate?
     var refreshData = false
 
@@ -23,6 +23,7 @@ class DetailViewController : UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        quote = Quote.makeQuote(UIPasteboard.generalPasteboard().string! as String)
         fieldAuthor.delegate = self
         fieldQuote.text = quote.text
         fieldAuthor.text = quote.author
