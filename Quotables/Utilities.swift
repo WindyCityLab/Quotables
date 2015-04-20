@@ -8,18 +8,24 @@
 
 import UIKit
 
-func sanitizeQuote(quote: String) -> String {
-    let regexArray = ["Read more at http.+$"]
-    var str = String(quote)
-    for regex in regexArray {
-        if let match = str.rangeOfString(regex, options: .RegularExpressionSearch){
-            str.removeRange(match)
-        }
+func applyRegex(input: String, regex: String) -> String {
+    var str = String(input)
+    if let match = str.rangeOfString(regex, options: .RegularExpressionSearch){
+        str.removeRange(match)
     }
 
     return str
 }
 
+func sanitizeQuote(quote: String) -> String {
+    let regexArray = ["Read more at http.+$"]
+    var str = String(quote)
+    for regex in regexArray {
+        str = applyRegex(str, regex)
+    }
+
+    return str
+}
 
 func adjustFontSize(label: UILabel, size: CGFloat) {
         let font = label.font.fontWithSize(size)
