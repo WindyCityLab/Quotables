@@ -8,6 +8,8 @@
 
 import UIKit
 
+let EXCLUDE_REGEX = ["Read more at http.+$", "Excerpt From:.+$"]
+let EXCLUDE_CHARS = ["\n", "“", "”", "―"]
 
 func adjustFontSize(label: UILabel, size: CGFloat) {
     let font = label.font.fontWithSize(size)
@@ -24,14 +26,12 @@ func removeRegex(input: String, regex: String) -> String {
 }
 
 func sanitizeQuote(quote: String) -> String {
-    let regexArray = ["Read more at http.+$", "Excerpt From:.+$"]
     var str = String(quote)
-    let targets = ["\n", "“", "”", "―"]
-    for target in targets {
+    for target in EXCLUDE_CHARS {
         str = str.stringByReplacingOccurrencesOfString(target, withString: " ")
     }
 
-    for regex in regexArray {
+    for regex in EXCLUDE_REGEX {
         str = removeRegex(str, regex)
     }
 
