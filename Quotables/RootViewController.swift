@@ -19,9 +19,7 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if self.view.frame.width > 400 || self.view.frame.height > 700 {
-            increaseFontSize = true
-        }
+        increaseFontSize = minimumSizeExceeded(self.view)
 
         refreshControl.addTarget(self, action: "refreshQuotes:", forControlEvents: UIControlEvents.ValueChanged)
         self.tableQuotes.addSubview(refreshControl)
@@ -99,8 +97,12 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
             let indexPath = tableQuotes.indexPathForCell(sender as! UITableViewCell)
             detail.quote = quotes[indexPath!.row] as! Quote
         } else if(segue.identifier == "addQuote") {
-            let quote = Quote.makeQuote(UIPasteboard.generalPasteboard().string! as String)
-            detail.quote = quote
+            if let text = UIPasteboard.generalPasteboard().string {
+                detail.quote = Quote.makeQuote(text)
+            } else {
+                detail.quote = Quote(className: "Quote")
+            }
+
             detail.refreshData = true
         }
 

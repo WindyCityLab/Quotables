@@ -9,7 +9,23 @@
 import UIKit
 
 
+
+func minimumFontSizeForView(width: CGFloat, height: CGFloat) -> (UIView -> Bool) {
+    return {view in
+        view.frame.width > width || view.frame.height > height
+    }
+}
+
+let minimumSizeExceeded = minimumFontSizeForView(400, 700)
+
+func adjustFontSize(textView: UITextView, size: CGFloat) {
+    textView.font = textView.font.fontWithSize(size)
+}
+
+func adjustFontSize(textField: UITextField, size: CGFloat) {
+    textField.font = textField.font.fontWithSize(size)
+}
+
 func adjustFontSize(label: UILabel, size: CGFloat) {
-    let font = label.font.fontWithSize(size)
-    label.font = font
+    label.font = label.font.fontWithSize(size)
 }

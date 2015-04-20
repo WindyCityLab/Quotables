@@ -17,12 +17,19 @@ class DetailViewController : UIViewController, UITextFieldDelegate {
     var quote: Quote = Quote(className: "Quote")
     var delegate: DetailViewControllerDelegate?
     var refreshData = false
+    var increaseFontSize: Bool = false
 
     @IBOutlet var fieldQuote: UITextView!
     @IBOutlet var fieldAuthor: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        if minimumSizeExceeded(self.view) {
+            adjustFontSize(fieldQuote, 30)
+            adjustFontSize(fieldAuthor, 25)
+        }
+
         fieldAuthor.delegate = self
         fieldQuote.text = quote.text
         fieldAuthor.text = quote.author

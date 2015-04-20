@@ -26,8 +26,11 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     }
     
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
-        let quote = Quote.makeQuote(UIPasteboard.generalPasteboard().string!)
-        labelQuote.text = "\(quote.text)\n\n\(quote.author)"
+        if let text = UIPasteboard.generalPasteboard().string {
+            let quote = Quote.makeQuote(text)
+            labelQuote.text = "\(quote.text)\n\n\(quote.author)"
+        }
+
         completionHandler(NCUpdateResult.NewData)
     }
 
