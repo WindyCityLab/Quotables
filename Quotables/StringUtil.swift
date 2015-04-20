@@ -5,8 +5,7 @@
 //  Created by Fiaz Sami on 4/14/15.
 //  Copyright (c) 2015 windycitylabs. All rights reserved.
 //
-
-import UIKit
+import Foundation
 
 let EXCLUDE_REGEX = ["Read more at http.+$", "Excerpt From:.+$"]
 let EXCLUDE_CHARS = ["\n", "“", "”", "―"]
@@ -16,10 +15,6 @@ let POS_PERSON = "PersonalName"
 
 let SINGLE_SPACE = " "
 
-func adjustFontSize(label: UILabel, size: CGFloat) {
-    let font = label.font.fontWithSize(size)
-    label.font = font
-}
 
 func removeRegex(input: String, regex: String) -> String {
     var str = String(input)

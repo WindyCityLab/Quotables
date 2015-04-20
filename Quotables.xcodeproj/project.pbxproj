@@ -69,9 +69,10 @@
 		8823110D1ADD56AF00016DBE /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 882310A01ADD50C900016DBE /* ParseFacebookUtilsV4.framework */; };
 		8823110E1ADD56AF00016DBE /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 882310A11ADD50C900016DBE /* ParseUI.framework */; };
 		8823110F1ADD56B500016DBE /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882310C01ADD515A00016DBE /* Quote.swift */; };
-		8864F3431ADD714400CA0AA2 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864F3421ADD714400CA0AA2 /* Utilities.swift */; };
-		8864F3441ADD71A800CA0AA2 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864F3421ADD714400CA0AA2 /* Utilities.swift */; };
-		8864F3451ADD721500CA0AA2 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864F3421ADD714400CA0AA2 /* Utilities.swift */; };
+		88245AA51AE56D1E00BFF453 /* InterfaceUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88245AA41AE56D1E00BFF453 /* InterfaceUtil.swift */; };
+		8864F3431ADD714400CA0AA2 /* StringUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864F3421ADD714400CA0AA2 /* StringUtil.swift */; };
+		8864F3441ADD71A800CA0AA2 /* StringUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864F3421ADD714400CA0AA2 /* StringUtil.swift */; };
+		8864F3451ADD721500CA0AA2 /* StringUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864F3421ADD714400CA0AA2 /* StringUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,7 +154,8 @@
 		882310F61ADD569F00016DBE /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		882310F81ADD569F00016DBE /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		88245AA31AE5653700BFF453 /* Quotables-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Quotables-Bridging-Header.h"; sourceTree = "<group>"; };
-		8864F3421ADD714400CA0AA2 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		88245AA41AE56D1E00BFF453 /* InterfaceUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceUtil.swift; sourceTree = "<group>"; };
+		8864F3421ADD714400CA0AA2 /* StringUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -395,7 +397,8 @@
 		8864F3411ADD712E00CA0AA2 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				8864F3421ADD714400CA0AA2 /* Utilities.swift */,
+				8864F3421ADD714400CA0AA2 /* StringUtil.swift */,
+				88245AA41AE56D1E00BFF453 /* InterfaceUtil.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -580,8 +583,9 @@
 				882310BE1ADD514900016DBE /* DetailViewController.swift in Sources */,
 				882310BF1ADD514900016DBE /* RootViewController.swift in Sources */,
 				882310C11ADD515A00016DBE /* Quote.swift in Sources */,
+				88245AA51AE56D1E00BFF453 /* InterfaceUtil.swift in Sources */,
 				8823107C1ADD50AA00016DBE /* AppDelegate.swift in Sources */,
-				8864F3431ADD714400CA0AA2 /* Utilities.swift in Sources */,
+				8864F3431ADD714400CA0AA2 /* StringUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,7 +603,7 @@
 			files = (
 				882310CB1ADD524D00016DBE /* ShareViewController.swift in Sources */,
 				882310E71ADD550600016DBE /* Quote.swift in Sources */,
-				8864F3451ADD721500CA0AA2 /* Utilities.swift in Sources */,
+				8864F3451ADD721500CA0AA2 /* StringUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -609,7 +613,7 @@
 			files = (
 				882310F71ADD569F00016DBE /* TodayViewController.swift in Sources */,
 				8823110F1ADD56B500016DBE /* Quote.swift in Sources */,
-				8864F3441ADD71A800CA0AA2 /* Utilities.swift in Sources */,
+				8864F3441ADD71A800CA0AA2 /* StringUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
