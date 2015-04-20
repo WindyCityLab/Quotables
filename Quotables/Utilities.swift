@@ -47,7 +47,7 @@ func getPersonName(str: String) -> String {
     let options: NSLinguisticTaggerOptions = .OmitWhitespace | .OmitPunctuation | .JoinNames
     let schemes = NSLinguisticTagger.availableTagSchemesForLanguage(NLP_ENGLISH)
     let tagger = NSLinguisticTagger(tagSchemes: schemes, options: Int(options.rawValue))
-    var personName = ""
+    var personName = "Anonymous"
     tagger.string = str
     tagger.enumerateTagsInRange(NSMakeRange(0, (str as NSString).length), scheme: NSLinguisticTagSchemeNameTypeOrLexicalClass, options: options) { (tag, tokenRange, sentenceRange, _) in
         let token = (str as NSString).substringWithRange(tokenRange)
