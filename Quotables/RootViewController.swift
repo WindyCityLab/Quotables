@@ -58,6 +58,7 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     func loadQuotes() {
         let quoteQuery = Quote.query()
+        quoteQuery?.addDescendingOrder("createdAt")
         quoteQuery!.findObjectsInBackgroundWithBlock { (quoteObjects, error) -> Void in
             if error == nil {
                 self.quotes = quoteObjects!
