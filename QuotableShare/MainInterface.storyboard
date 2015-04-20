@@ -18,64 +18,49 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="83C-gW-99b">
-                                <rect key="frame" x="16" y="51" width="568" height="167"/>
+                                <rect key="frame" x="16" y="45" width="568" height="167"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="167" id="n2A-WB-ymc"/>
+                                    <constraint firstAttribute="height" constant="167" id="WF8-ZB-gvl"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Palatino-Italic" family="Palatino" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w1o-YY-6oJ">
-                                <rect key="frame" x="16" y="258" width="568" height="30"/>
+                                <rect key="frame" x="16" y="245" width="568" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="eJK-DQ-M1r"/>
+                                    <constraint firstAttribute="height" constant="30" id="bGq-tg-Z0s"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYW-vm-FS0">
-                                <rect key="frame" x="16" y="20" width="55" height="23"/>
+                                <rect key="frame" x="16" y="20" width="42" height="17"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="23" id="ixl-hV-lAM"/>
-                                    <constraint firstAttribute="width" constant="55" id="yNE-2J-vLd"/>
+                                    <constraint firstAttribute="height" constant="17" id="80h-oN-gke"/>
+                                    <constraint firstAttribute="width" constant="42" id="gWV-w2-MRj"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="15"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y1k-9s-6wI">
-                                <rect key="frame" x="16" y="229" width="65" height="23"/>
+                                <rect key="frame" x="16" y="220" width="49" height="17"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="65" id="huG-mN-ySn"/>
-                                    <constraint firstAttribute="height" constant="23" id="oJT-6F-61e"/>
+                                    <constraint firstAttribute="height" constant="17" id="f4d-IA-C1C"/>
+                                    <constraint firstAttribute="width" constant="49" id="x7J-68-IAb"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="15"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7nf-C2-tDN">
-                                <rect key="frame" x="16" y="296" width="53" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="53" id="PMQ-6d-D3u"/>
-                                    <constraint firstAttribute="height" constant="35" id="Sqg-ol-OcK"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="20"/>
-                                <state key="normal" title="SAVE">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onButtonSaveTap:" destination="j1y-V4-xli" eventType="touchUpInside" id="KNP-7W-x2B"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zju-UV-sQQ">
-                                <rect key="frame" x="95" y="296" width="86" height="35"/>
+                                <rect key="frame" x="16" y="283" width="65" height="29"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="SSc-7e-tIi"/>
-                                    <constraint firstAttribute="width" constant="86" id="tkY-cQ-wce"/>
+                                    <constraint firstAttribute="height" constant="29" id="IXU-2K-WTo"/>
+                                    <constraint firstAttribute="width" constant="65" id="U5T-kb-Zhn"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="15"/>
                                 <state key="normal" title="CANCEL">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -84,23 +69,38 @@
                                     <action selector="onButtonCancelTap:" destination="j1y-V4-xli" eventType="touchUpInside" id="TAP-k4-qt4"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7nf-C2-tDN">
+                                <rect key="frame" x="544" y="283" width="40" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="QvZ-tw-U1z"/>
+                                    <constraint firstAttribute="width" constant="40" id="Zay-gP-7gS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="15"/>
+                                <state key="normal" title="SAVE">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onButtonSaveTap:" destination="j1y-V4-xli" eventType="touchUpInside" id="KNP-7W-x2B"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.21848529933872099" green="0.31078430858829997" blue="0.38008432539682546" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="7nf-C2-tDN" firstAttribute="leading" secondItem="wbc-yd-nQP" secondAttribute="leadingMargin" id="0kE-gK-KfR"/>
-                            <constraint firstItem="dYW-vm-FS0" firstAttribute="leading" secondItem="wbc-yd-nQP" secondAttribute="leadingMargin" id="2In-me-Hej"/>
-                            <constraint firstItem="83C-gW-99b" firstAttribute="trailing" secondItem="wbc-yd-nQP" secondAttribute="trailingMargin" id="9sI-Xh-CUO"/>
-                            <constraint firstItem="w1o-YY-6oJ" firstAttribute="trailing" secondItem="wbc-yd-nQP" secondAttribute="trailingMargin" id="H6q-si-KYh"/>
-                            <constraint firstItem="7nf-C2-tDN" firstAttribute="top" secondItem="w1o-YY-6oJ" secondAttribute="bottom" constant="8" id="Kfx-NE-Hfn"/>
-                            <constraint firstItem="w1o-YY-6oJ" firstAttribute="top" secondItem="y1k-9s-6wI" secondAttribute="bottom" constant="6" id="Lqh-oV-H2i"/>
-                            <constraint firstItem="y1k-9s-6wI" firstAttribute="top" secondItem="83C-gW-99b" secondAttribute="bottom" constant="11" id="WDO-Gd-8Id"/>
-                            <constraint firstItem="83C-gW-99b" firstAttribute="leading" secondItem="wbc-yd-nQP" secondAttribute="leadingMargin" id="XyL-Ru-nHb"/>
-                            <constraint firstItem="83C-gW-99b" firstAttribute="top" secondItem="dYW-vm-FS0" secondAttribute="bottom" constant="8" id="Zf6-0M-0ok"/>
-                            <constraint firstItem="w1o-YY-6oJ" firstAttribute="leading" secondItem="wbc-yd-nQP" secondAttribute="leadingMargin" id="aqg-pt-lyN"/>
-                            <constraint firstItem="dYW-vm-FS0" firstAttribute="top" secondItem="8bI-gs-bmD" secondAttribute="bottom" id="eE9-Cq-Zcx"/>
-                            <constraint firstItem="Zju-UV-sQQ" firstAttribute="leading" secondItem="7nf-C2-tDN" secondAttribute="trailing" constant="26" id="op7-Pc-kn6"/>
-                            <constraint firstItem="Zju-UV-sQQ" firstAttribute="top" secondItem="w1o-YY-6oJ" secondAttribute="bottom" constant="8" id="paB-bv-JIk"/>
-                            <constraint firstItem="y1k-9s-6wI" firstAttribute="leading" secondItem="wbc-yd-nQP" secondAttribute="leadingMargin" id="uPA-6N-7Gd"/>
+                            <constraint firstItem="Zju-UV-sQQ" firstAttribute="top" secondItem="w1o-YY-6oJ" secondAttribute="bottom" constant="8" id="9fV-cY-9Y7"/>
+                            <constraint firstItem="w1o-YY-6oJ" firstAttribute="top" secondItem="y1k-9s-6wI" secondAttribute="bottom" constant="8" id="A5i-OP-Ixv"/>
+                            <constraint firstItem="y1k-9s-6wI" firstAttribute="leading" secondItem="wbc-yd-nQP" secondAttribute="leadingMargin" id="BOq-yf-c6A"/>
+                            <constraint firstItem="7nf-C2-tDN" firstAttribute="trailing" secondItem="wbc-yd-nQP" secondAttribute="trailingMargin" id="Bof-a5-J9g"/>
+                            <constraint firstItem="83C-gW-99b" firstAttribute="trailing" secondItem="wbc-yd-nQP" secondAttribute="trailingMargin" id="DaI-hn-kkA"/>
+                            <constraint firstItem="dYW-vm-FS0" firstAttribute="leading" secondItem="wbc-yd-nQP" secondAttribute="leadingMargin" id="Hd1-Sq-VIa"/>
+                            <constraint firstItem="w1o-YY-6oJ" firstAttribute="trailing" secondItem="wbc-yd-nQP" secondAttribute="trailingMargin" id="HiR-lU-NfH"/>
+                            <constraint firstItem="dYW-vm-FS0" firstAttribute="top" secondItem="8bI-gs-bmD" secondAttribute="bottom" id="O82-x8-w50"/>
+                            <constraint firstItem="7nf-C2-tDN" firstAttribute="top" secondItem="w1o-YY-6oJ" secondAttribute="bottom" constant="8" id="ZPX-W5-HG5"/>
+                            <constraint firstItem="y1k-9s-6wI" firstAttribute="top" secondItem="83C-gW-99b" secondAttribute="bottom" constant="8" id="leB-5Y-paE"/>
+                            <constraint firstItem="Zju-UV-sQQ" firstAttribute="leading" secondItem="wbc-yd-nQP" secondAttribute="leadingMargin" id="ned-oI-S36"/>
+                            <constraint firstItem="83C-gW-99b" firstAttribute="top" secondItem="dYW-vm-FS0" secondAttribute="bottom" constant="8" id="rsW-pP-dRs"/>
+                            <constraint firstItem="83C-gW-99b" firstAttribute="leading" secondItem="wbc-yd-nQP" secondAttribute="leadingMargin" id="tDs-di-0uj"/>
+                            <constraint firstItem="w1o-YY-6oJ" firstAttribute="leading" secondItem="wbc-yd-nQP" secondAttribute="leadingMargin" id="z5J-sF-y3m"/>
                         </constraints>
                     </view>
                     <connections>

@@ -22,8 +22,13 @@ class DetailViewController : UIViewController, UITextFieldDelegate {
     @IBOutlet var fieldQuote: UITextView!
     @IBOutlet var fieldAuthor: UITextField!
 
+    @IBOutlet var saveButton: UIBarButtonItem!
+    @IBOutlet var deleteButton: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        loadNavbarTheme(self.view, self.navigationController!.navigationBar)
 
         if minimumSizeExceeded(self.view) {
             adjustFontSize(fieldQuote, 30)
@@ -37,6 +42,11 @@ class DetailViewController : UIViewController, UITextFieldDelegate {
 
         fieldAuthor.keyboardAppearance = UIKeyboardAppearance.Dark
         fieldQuote.keyboardAppearance = UIKeyboardAppearance.Dark
+
+        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Palatino", size: 17.0)!]
+        saveButton.setTitleTextAttributes(titleDict as [NSObject : AnyObject], forState: .Normal)
+
+        deleteButton.hidden = refreshData
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,10 +55,6 @@ class DetailViewController : UIViewController, UITextFieldDelegate {
 
     @IBAction func onButtonSaveTap(sender: AnyObject) {
         saveQuote()
-    }
-
-    @IBAction func onButtonCancelTap(sender: AnyObject) {
-        dismissView(false)
     }
 
     @IBAction func onButtonDeleteTap(sender: AnyObject) {

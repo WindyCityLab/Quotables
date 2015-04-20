@@ -8,7 +8,7 @@
         <!--Quotables-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="RootViewController" customModule="Quotables" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RootViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vXZ-lx-hvc" customClass="RootViewController" customModule="Quotables" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -61,7 +61,7 @@
                                         <color key="backgroundColor" red="0.21848529929999999" green="0.3107843086" blue="0.38008432539999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
-                                            <segue destination="sr9-JX-sDG" kind="presentation" identifier="detailQuote" modalTransitionStyle="flipHorizontal" id="esk-8h-vod"/>
+                                            <segue destination="sr9-JX-sDG" kind="show" identifier="detailQuote" id="esk-8h-vod"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -83,7 +83,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="aUu-iC-LkI">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="sr9-JX-sDG" kind="presentation" identifier="addQuote" id="mQZ-Yt-iAq"/>
+                                <segue destination="sr9-JX-sDG" kind="show" identifier="addQuote" id="mQZ-Yt-iAq"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -95,10 +95,10 @@
             </objects>
             <point key="canvasLocation" x="1137" y="375"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Title-->
         <scene sceneID="u9p-gN-EWS">
             <objects>
-                <viewController id="sr9-JX-sDG" customClass="DetailViewController" customModule="Quotables" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sr9-JX-sDG" customClass="DetailViewController" customModule="Quotables" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2EB-Rv-Ghk"/>
                         <viewControllerLayoutGuide type="bottom" id="6CZ-G0-NNV"/>
@@ -107,62 +107,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3hD-91-fdR">
-                                <rect key="frame" x="16" y="51" width="568" height="167"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="167" id="9NJ-m3-BJL"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Palatino-Italic" family="Palatino" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WM5-8w-rpB">
-                                <rect key="frame" x="16" y="258" width="568" height="30"/>
+                                <rect key="frame" x="16" y="273" width="568" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="wSo-BA-NX8"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yn8-7c-hIU">
-                                <rect key="frame" x="16" y="20" width="55" height="23"/>
+                                <rect key="frame" x="16" y="72" width="42" height="17"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="23" id="3Me-z5-nfr"/>
-                                    <constraint firstAttribute="width" constant="55" id="wnC-lr-Q1M"/>
+                                    <constraint firstAttribute="height" constant="17" id="3Me-z5-nfr"/>
+                                    <constraint firstAttribute="width" constant="42" id="wnC-lr-Q1M"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="15"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOQ-SV-LZM">
-                                <rect key="frame" x="16" y="229" width="65" height="23"/>
+                                <rect key="frame" x="16" y="248" width="49" height="17"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="65" id="7GI-VG-00q"/>
-                                    <constraint firstAttribute="height" constant="23" id="lzs-m3-pfd"/>
+                                    <constraint firstAttribute="height" constant="17" id="4iZ-JC-UM8"/>
+                                    <constraint firstAttribute="width" constant="49" id="qs7-G5-TTE"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="15"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gzU-oc-Z1A">
-                                <rect key="frame" x="16" y="296" width="53" height="35"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yxV-Am-f4g">
+                                <rect key="frame" x="16" y="97" width="568" height="143"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="F96-Wc-w6Y"/>
-                                    <constraint firstAttribute="width" constant="53" id="nYf-NP-I8X"/>
+                                    <constraint firstAttribute="height" constant="143" id="ose-QM-vF4"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="20"/>
-                                <state key="normal" title="SAVE">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onButtonSaveTap:" destination="sr9-JX-sDG" eventType="touchUpInside" id="acl-pN-LSB"/>
-                                </connections>
-                            </button>
+                                <fontDescription key="fontDescription" name="Palatino-Italic" family="Palatino" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="09A-lb-flf">
-                                <rect key="frame" x="505" y="296" width="79" height="35"/>
+                                <rect key="frame" x="524" y="311" width="60" height="29"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="TMF-wE-7hf"/>
-                                    <constraint firstAttribute="width" constant="79" id="cnQ-dM-gfO"/>
+                                    <constraint firstAttribute="height" constant="29" id="arY-Bc-41p"/>
+                                    <constraint firstAttribute="width" constant="60" id="t1r-MW-I1Q"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="15"/>
                                 <state key="normal" title="DELETE">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -171,45 +159,36 @@
                                     <action selector="onButtonDeleteTap:" destination="sr9-JX-sDG" eventType="touchUpInside" id="DPH-07-YEh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kGM-BO-j6s">
-                                <rect key="frame" x="95" y="296" width="86" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="86" id="LO1-V6-98P"/>
-                                    <constraint firstAttribute="height" constant="35" id="fFd-8N-Hmd"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="20"/>
-                                <state key="normal" title="CANCEL">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onButtonCancelTap:" destination="sr9-JX-sDG" eventType="touchUpInside" id="dl2-Mu-OWc"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.21848529929999999" green="0.3107843086" blue="0.38008432539999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Yn8-7c-hIU" firstAttribute="top" secondItem="2EB-Rv-Ghk" secondAttribute="bottom" id="26p-kQ-6fl"/>
-                            <constraint firstItem="cOQ-SV-LZM" firstAttribute="leading" secondItem="EQC-Cn-jcY" secondAttribute="leadingMargin" id="7IG-vN-ch2"/>
-                            <constraint firstItem="WM5-8w-rpB" firstAttribute="leading" secondItem="EQC-Cn-jcY" secondAttribute="leadingMargin" id="CSj-Oo-4y2"/>
-                            <constraint firstItem="3hD-91-fdR" firstAttribute="trailing" secondItem="EQC-Cn-jcY" secondAttribute="trailingMargin" id="Ixj-9G-MWB"/>
-                            <constraint firstItem="gzU-oc-Z1A" firstAttribute="top" secondItem="WM5-8w-rpB" secondAttribute="bottom" constant="8" id="NK2-Wx-cn8"/>
-                            <constraint firstItem="kGM-BO-j6s" firstAttribute="leading" secondItem="gzU-oc-Z1A" secondAttribute="trailing" constant="26" id="Nar-ps-f5l"/>
-                            <constraint firstItem="3hD-91-fdR" firstAttribute="leading" secondItem="EQC-Cn-jcY" secondAttribute="leadingMargin" id="OEa-We-q69"/>
+                            <constraint firstItem="WM5-8w-rpB" firstAttribute="top" secondItem="cOQ-SV-LZM" secondAttribute="bottom" constant="8" id="0e2-YT-SOu"/>
+                            <constraint firstItem="Yn8-7c-hIU" firstAttribute="top" secondItem="2EB-Rv-Ghk" secondAttribute="bottom" constant="8" id="26p-kQ-6fl"/>
+                            <constraint firstItem="09A-lb-flf" firstAttribute="trailing" secondItem="EQC-Cn-jcY" secondAttribute="trailingMargin" id="3eN-lg-MTk"/>
+                            <constraint firstItem="09A-lb-flf" firstAttribute="top" secondItem="WM5-8w-rpB" secondAttribute="bottom" constant="8" id="6au-bx-DuX"/>
+                            <constraint firstItem="WM5-8w-rpB" firstAttribute="trailing" secondItem="EQC-Cn-jcY" secondAttribute="trailingMargin" id="GAr-Ug-OMS"/>
+                            <constraint firstItem="yxV-Am-f4g" firstAttribute="leading" secondItem="EQC-Cn-jcY" secondAttribute="leadingMargin" id="Qn3-nJ-2uS"/>
                             <constraint firstItem="Yn8-7c-hIU" firstAttribute="leading" secondItem="EQC-Cn-jcY" secondAttribute="leadingMargin" id="RFZ-wQ-uJC"/>
-                            <constraint firstItem="WM5-8w-rpB" firstAttribute="trailing" secondItem="EQC-Cn-jcY" secondAttribute="trailingMargin" id="Z7T-B6-rB6"/>
-                            <constraint firstItem="09A-lb-flf" firstAttribute="trailing" secondItem="EQC-Cn-jcY" secondAttribute="trailingMargin" id="cU6-RP-YfZ"/>
-                            <constraint firstItem="gzU-oc-Z1A" firstAttribute="leading" secondItem="EQC-Cn-jcY" secondAttribute="leadingMargin" id="fRL-rc-X00"/>
-                            <constraint firstItem="WM5-8w-rpB" firstAttribute="top" secondItem="cOQ-SV-LZM" secondAttribute="bottom" constant="6" id="fdr-eq-etB"/>
-                            <constraint firstItem="3hD-91-fdR" firstAttribute="top" secondItem="Yn8-7c-hIU" secondAttribute="bottom" constant="8" id="hJe-BZ-hwL"/>
-                            <constraint firstItem="kGM-BO-j6s" firstAttribute="top" secondItem="WM5-8w-rpB" secondAttribute="bottom" constant="8" id="lcm-FH-3JV"/>
-                            <constraint firstItem="cOQ-SV-LZM" firstAttribute="top" secondItem="3hD-91-fdR" secondAttribute="bottom" constant="11" id="rM8-H7-OoG"/>
-                            <constraint firstItem="09A-lb-flf" firstAttribute="top" secondItem="WM5-8w-rpB" secondAttribute="bottom" constant="8" id="tk4-dD-oBG"/>
+                            <constraint firstItem="cOQ-SV-LZM" firstAttribute="leading" secondItem="EQC-Cn-jcY" secondAttribute="leadingMargin" id="Zu7-U5-hip"/>
+                            <constraint firstItem="WM5-8w-rpB" firstAttribute="leading" secondItem="EQC-Cn-jcY" secondAttribute="leadingMargin" id="a3m-2S-b0O"/>
+                            <constraint firstItem="cOQ-SV-LZM" firstAttribute="top" secondItem="yxV-Am-f4g" secondAttribute="bottom" constant="8" id="dJR-Bw-gLb"/>
+                            <constraint firstItem="yxV-Am-f4g" firstAttribute="trailing" secondItem="EQC-Cn-jcY" secondAttribute="trailingMargin" id="f2z-8Y-LfW"/>
+                            <constraint firstItem="yxV-Am-f4g" firstAttribute="top" secondItem="Yn8-7c-hIU" secondAttribute="bottom" constant="8" id="sdl-82-Pqp"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="2R1-yu-jkq">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="z3T-P5-WXg">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="onButtonSaveTap:" destination="sr9-JX-sDG" id="XnZ-hc-sIS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="deleteButton" destination="09A-lb-flf" id="Z7e-cr-UCo"/>
                         <outlet property="fieldAuthor" destination="WM5-8w-rpB" id="1ne-fM-YfV"/>
-                        <outlet property="fieldQuote" destination="3hD-91-fdR" id="RYc-CD-807"/>
+                        <outlet property="fieldQuote" destination="yxV-Am-f4g" id="E9y-Ek-QgW"/>
+                        <outlet property="saveButton" destination="z3T-P5-WXg" id="dVr-dt-x9e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fwc-nT-F0B" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -236,6 +215,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="mQZ-Yt-iAq"/>
+        <segue reference="esk-8h-vod"/>
     </inferredMetricsTieBreakers>
 </document>

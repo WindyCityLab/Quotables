@@ -24,8 +24,12 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         refreshControl.addTarget(self, action: "refreshQuotes:", forControlEvents: UIControlEvents.ValueChanged)
         self.tableQuotes.addSubview(refreshControl)
 
-        loadNavbarTheme()
+        loadNavbarTheme(self.view, self.navigationController!.navigationBar)
         loadQuotes()
+
+
+        self.navigationController!.navigationBar.tintColor = UIColor.whiteColor()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,20 +37,14 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Dispose of any resources that can be recreated.
     }
 
-    func loadNavbarTheme() {
-        let nav = self.navigationController?.navigationBar
-        nav?.barStyle = UIBarStyle.BlackTranslucent
-
-        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Palatino", size: navbarFontSize())!]
-        nav?.titleTextAttributes = titleDict as [NSObject : AnyObject]
+    override func viewWillDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.title = ""
     }
 
-    func navbarFontSize() -> CGFloat {
-        if increaseFontSize {
-            return 30.0
-        }
-
-        return 20.0
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.title = "Quotables"
     }
 
     func refreshQuotes(forControlEvents: UIControlEvents) {
