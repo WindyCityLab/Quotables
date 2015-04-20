@@ -80,14 +80,14 @@ class DetailViewController : UIViewController, UITextFieldDelegate {
             if error != nil || !success {
                 println(error)
             } else {
-                self.dismissView(self.refreshData)
+                self.dismissView(true)
             }
         }
     }
 
     func dismissView(remoteUpdate: Bool) {
         delegate?.updateTable(remoteUpdate)
-        dismissViewControllerAnimated(true, completion: nil)
+        self.navigationController?.popToRootViewControllerAnimated(true)
     }
 
 }
