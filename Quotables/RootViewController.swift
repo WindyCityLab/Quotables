@@ -13,10 +13,15 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet var tableQuotes: UITableView!
 
     var quotes: NSArray = []
-    var refreshControl = UIRefreshControl()
+    let refreshControl = UIRefreshControl()
+    var increaseFontSize: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        if self.view.frame.width > 400 || self.view.frame.height > 700 {
+            increaseFontSize = true
+        }
 
         refreshControl.addTarget(self, action: "refreshQuotes:", forControlEvents: UIControlEvents.ValueChanged)
         self.tableQuotes.addSubview(refreshControl)
@@ -33,10 +38,18 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
     func loadNavbarTheme() {
         let nav = self.navigationController?.navigationBar
         nav?.barStyle = UIBarStyle.BlackTranslucent
-        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Palatino", size: 20)!]
+
+        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Palatino", size: navbarFontSize())!]
         nav?.titleTextAttributes = titleDict as [NSObject : AnyObject]
     }
 
+    func navbarFontSize() -> CGFloat {
+        if increaseFontSize {
+            return 30.0
+        }
+
+        return 20.0
+    }
 
     func refreshQuotes(forControlEvents: UIControlEvents) {
         loadQuotes()
@@ -66,6 +79,10 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         let labelAuthor = self.view.viewWithTag(110) as! UILabel
         labelAuthor.text = "- \(quote.author)"
 
+        if increaseFontSize {
+            adjustFontSize(labelQuote, 28)
+            adjustFontSize(labelAuthor, 22)
+        }
 
         return cell
     }
@@ -84,7 +101,7 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
             let quote = Quote()
             let pasteBoard = UIPasteboard.generalPasteboard().string
             if pasteBoard != nil {
-                quote.text = Sanitizer.sanitizeQuote(pasteBoard!)
+                quote.text = sanitizeQuote(pasteBoard!)
             } else {
                 quote.text = ""
             }

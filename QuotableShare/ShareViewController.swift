@@ -19,7 +19,7 @@ class ShareViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         Parse.setApplicationId("OL0i1OhDkRscie1SlaqRinQsn78CwY4gL1vThHaF", clientKey: "vIuRlq40qlDDCYffI8yeTd7aixpQB4vGVnKYoBKu")
         fieldAuthor.delegate = self
-        fieldQuote.text = Sanitizer.sanitizeQuote(UIPasteboard.generalPasteboard().string!)
+        fieldQuote.text = sanitizeQuote(UIPasteboard.generalPasteboard().string!)
         fieldQuote.becomeFirstResponder()
 
 
