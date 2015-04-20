@@ -152,6 +152,7 @@
 		882310F51ADD569F00016DBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		882310F61ADD569F00016DBE /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		882310F81ADD569F00016DBE /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		88245AA31AE5653700BFF453 /* Quotables-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Quotables-Bridging-Header.h"; sourceTree = "<group>"; };
 		8864F3421ADD714400CA0AA2 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -272,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				8823107A1ADD50AA00016DBE /* Info.plist */,
+				88245AA31AE5653700BFF453 /* Quotables-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
