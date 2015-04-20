@@ -18,6 +18,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     override func viewDidLoad() {
         super.viewDidLoad()
         Parse.setApplicationId("OL0i1OhDkRscie1SlaqRinQsn78CwY4gL1vThHaF", clientKey: "vIuRlq40qlDDCYffI8yeTd7aixpQB4vGVnKYoBKu")
+
+        buttonSave.hidden = true
     }
     
     override func didReceiveMemoryWarning() {
@@ -27,8 +29,14 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
         if let text = UIPasteboard.generalPasteboard().string {
-            let quote = Quote.makeQuote(text)
-            labelQuote.text = "\(quote.text)\n\n\(quote.author)"
+            if let text = UIPasteboard.generalPasteboard().string {
+                let quote = Quote.makeQuote(text)
+                if !quote.text.isEmpty && !quote.text.isEmpty {
+                    labelQuote.text = "\(quote.text)\n\n\(quote.author)"
+                    buttonSave.hidden = false
+                }
+
+            }
         }
 
         completionHandler(NCUpdateResult.NewData)
@@ -42,7 +50,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             } else {
                 println("SAVING SUCCESSFUL")
                 self.labelQuote.text = ""
+                self.buttonSave.hidden = true
             }
         }
+
     }
 }
