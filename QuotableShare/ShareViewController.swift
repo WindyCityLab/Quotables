@@ -49,7 +49,7 @@ class ShareViewController: UIViewController, UITextFieldDelegate {
     }
 
     func saveQuote() {
-        let quote = Quote(className: "Quote")
+        let quote = Quote()
         quote.text = fieldQuote.text
         quote.author = fieldAuthor.text
         quote.saveInBackgroundWithBlock { (success, error) -> Void in

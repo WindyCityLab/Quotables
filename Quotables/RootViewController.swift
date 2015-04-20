@@ -101,7 +101,7 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
             if let text = UIPasteboard.generalPasteboard().string {
                 detail.quote = Quote.makeQuote(text)
             } else {
-                detail.quote = Quote(className: "Quote")
+                detail.quote = Quote()
             }
 
             detail.refreshData = true
