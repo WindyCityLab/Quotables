@@ -19,7 +19,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        Parse.setApplicationId(PARSE_APP_ID, clientKey: PARSE_CLIENT_ID)
+        registerFrameworks()
 
         buttonSave.hidden = true
     }

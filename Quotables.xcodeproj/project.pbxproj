@@ -82,6 +82,9 @@
 		8896C3CF1AE828D600F4A16F /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8896C3CB1AE828D600F4A16F /* Fabric.framework */; };
 		8896C3D01AE828D600F4A16F /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8896C3CB1AE828D600F4A16F /* Fabric.framework */; };
 		8896C3D11AE828D600F4A16F /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8896C3CB1AE828D600F4A16F /* Fabric.framework */; };
+		8896C3D31AE8297C00F4A16F /* FrameworkUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8896C3D21AE8297C00F4A16F /* FrameworkUtil.swift */; };
+		8896C3D41AE8297C00F4A16F /* FrameworkUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8896C3D21AE8297C00F4A16F /* FrameworkUtil.swift */; };
+		8896C3D51AE8297C00F4A16F /* FrameworkUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8896C3D21AE8297C00F4A16F /* FrameworkUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,6 +172,7 @@
 		8864F3421ADD714400CA0AA2 /* StringUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringUtil.swift; sourceTree = "<group>"; };
 		8896C3CA1AE828D600F4A16F /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		8896C3CB1AE828D600F4A16F /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		8896C3D21AE8297C00F4A16F /* FrameworkUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameworkUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -422,6 +426,7 @@
 				8864F3421ADD714400CA0AA2 /* StringUtil.swift */,
 				88245AA41AE56D1E00BFF453 /* InterfaceUtil.swift */,
 				88245AA81AE5B66200BFF453 /* Constants.swift */,
+				8896C3D21AE8297C00F4A16F /* FrameworkUtil.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -626,6 +631,7 @@
 				88245AA51AE56D1E00BFF453 /* InterfaceUtil.swift in Sources */,
 				88245AA91AE5B66200BFF453 /* Constants.swift in Sources */,
 				8823107C1ADD50AA00016DBE /* AppDelegate.swift in Sources */,
+				8896C3D31AE8297C00F4A16F /* FrameworkUtil.swift in Sources */,
 				8864F3431ADD714400CA0AA2 /* StringUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -643,6 +649,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				882310CB1ADD524D00016DBE /* ShareViewController.swift in Sources */,
+				8896C3D41AE8297C00F4A16F /* FrameworkUtil.swift in Sources */,
 				882310E71ADD550600016DBE /* Quote.swift in Sources */,
 				8864F3451ADD721500CA0AA2 /* StringUtil.swift in Sources */,
 				88245AAB1AE5B69300BFF453 /* Constants.swift in Sources */,
@@ -656,6 +663,7 @@
 				882310F71ADD569F00016DBE /* TodayViewController.swift in Sources */,
 				8823110F1ADD56B500016DBE /* Quote.swift in Sources */,
 				8864F3441ADD71A800CA0AA2 /* StringUtil.swift in Sources */,
+				8896C3D51AE8297C00F4A16F /* FrameworkUtil.swift in Sources */,
 				88245AAA1AE5B69000BFF453 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

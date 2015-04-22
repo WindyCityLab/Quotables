@@ -8,8 +8,6 @@
 
 import UIKit
 import Parse
-import Fabric
-import Crashlytics
 
 
 @UIApplicationMain
@@ -19,8 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        Parse.setApplicationId(PARSE_APP_ID, clientKey: PARSE_CLIENT_ID)
-        Fabric.with([Crashlytics()])
+        registerFrameworks()
         return true
     }
 
