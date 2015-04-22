@@ -76,6 +76,12 @@
 		8864F3431ADD714400CA0AA2 /* StringUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864F3421ADD714400CA0AA2 /* StringUtil.swift */; };
 		8864F3441ADD71A800CA0AA2 /* StringUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864F3421ADD714400CA0AA2 /* StringUtil.swift */; };
 		8864F3451ADD721500CA0AA2 /* StringUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864F3421ADD714400CA0AA2 /* StringUtil.swift */; };
+		8896C3CC1AE828D600F4A16F /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8896C3CA1AE828D600F4A16F /* Crashlytics.framework */; };
+		8896C3CD1AE828D600F4A16F /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8896C3CA1AE828D600F4A16F /* Crashlytics.framework */; };
+		8896C3CE1AE828D600F4A16F /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8896C3CA1AE828D600F4A16F /* Crashlytics.framework */; };
+		8896C3CF1AE828D600F4A16F /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8896C3CB1AE828D600F4A16F /* Fabric.framework */; };
+		8896C3D01AE828D600F4A16F /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8896C3CB1AE828D600F4A16F /* Fabric.framework */; };
+		8896C3D11AE828D600F4A16F /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8896C3CB1AE828D600F4A16F /* Fabric.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +167,8 @@
 		88245AA61AE5902D00BFF453 /* libcommonCrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcommonCrypto.dylib; path = usr/lib/system/libcommonCrypto.dylib; sourceTree = SDKROOT; };
 		88245AA81AE5B66200BFF453 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8864F3421ADD714400CA0AA2 /* StringUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringUtil.swift; sourceTree = "<group>"; };
+		8896C3CA1AE828D600F4A16F /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		8896C3CB1AE828D600F4A16F /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,10 +186,12 @@
 				882310AB1ADD50ED00016DBE /* libsqlite3.dylib in Frameworks */,
 				882310A91ADD50E800016DBE /* libz.dylib in Frameworks */,
 				882310A71ADD50C900016DBE /* ParseUI.framework in Frameworks */,
+				8896C3CC1AE828D600F4A16F /* Crashlytics.framework in Frameworks */,
 				882310A31ADD50C900016DBE /* Parse.framework in Frameworks */,
 				882310A41ADD50C900016DBE /* ParseCrashReporting.framework in Frameworks */,
 				882310A51ADD50C900016DBE /* ParseFacebookUtils.framework in Frameworks */,
 				882310A21ADD50C900016DBE /* Bolts.framework in Frameworks */,
+				8896C3CF1AE828D600F4A16F /* Fabric.framework in Frameworks */,
 				882310A61ADD50C900016DBE /* ParseFacebookUtilsV4.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,10 +217,12 @@
 				882310DD1ADD548C00016DBE /* libsqlite3.dylib in Frameworks */,
 				882310DE1ADD548C00016DBE /* libz.dylib in Frameworks */,
 				882310DF1ADD548C00016DBE /* Bolts.framework in Frameworks */,
+				8896C3CD1AE828D600F4A16F /* Crashlytics.framework in Frameworks */,
 				882310E01ADD548C00016DBE /* Parse.framework in Frameworks */,
 				882310E11ADD548C00016DBE /* ParseCrashReporting.framework in Frameworks */,
 				882310E21ADD548C00016DBE /* ParseFacebookUtils.framework in Frameworks */,
 				882310E31ADD548C00016DBE /* ParseFacebookUtilsV4.framework in Frameworks */,
+				8896C3D01AE828D600F4A16F /* Fabric.framework in Frameworks */,
 				882310E41ADD548C00016DBE /* ParseUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -224,9 +236,11 @@
 				882311011ADD56AF00016DBE /* CFNetwork.framework in Frameworks */,
 				882311021ADD56AF00016DBE /* CoreLocation.framework in Frameworks */,
 				882311031ADD56AF00016DBE /* MobileCoreServices.framework in Frameworks */,
+				8896C3D11AE828D600F4A16F /* Fabric.framework in Frameworks */,
 				882311041ADD56AF00016DBE /* QuartzCore.framework in Frameworks */,
 				882311051ADD56AF00016DBE /* Security.framework in Frameworks */,
 				882311061ADD56AF00016DBE /* SystemConfiguration.framework in Frameworks */,
+				8896C3CE1AE828D600F4A16F /* Crashlytics.framework in Frameworks */,
 				882311071ADD56AF00016DBE /* libsqlite3.dylib in Frameworks */,
 				882311081ADD56AF00016DBE /* libz.dylib in Frameworks */,
 				882311091ADD56AF00016DBE /* Bolts.framework in Frameworks */,
@@ -305,6 +319,8 @@
 		8823109B1ADD50B000016DBE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8896C3CA1AE828D600F4A16F /* Crashlytics.framework */,
+				8896C3CB1AE828D600F4A16F /* Fabric.framework */,
 				88245AA61AE5902D00BFF453 /* libcommonCrypto.dylib */,
 				882310BA1ADD511C00016DBE /* AudioToolbox.framework */,
 				882310B81ADD511800016DBE /* CFNetwork.framework */,
@@ -421,6 +437,7 @@
 				882310731ADD50AA00016DBE /* Frameworks */,
 				882310741ADD50AA00016DBE /* Resources */,
 				882310D01ADD524D00016DBE /* Embed App Extensions */,
+				8896C3C81AE8288700F4A16F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -581,6 +598,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8896C3C81AE8288700F4A16F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 3cc637e1d3824e232bd36698a150467337ec9efe c67256aef310e10b2a85568ac99ae7f1e6f3830e791d6ec6db647f30845b827a";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		882310721ADD50AA00016DBE /* Sources */ = {
