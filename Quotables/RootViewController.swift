@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class RootViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, DetailViewControllerDelegate {
 
@@ -30,6 +31,8 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         self.navigationController!.navigationBar.tintColor = UIColor.whiteColor()
 
+//        processCloudKitRecordId(setupUser)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,6 +48,10 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         self.title = "Quotables"
+    }
+
+    func setupUser(userInfo: String) {
+        println(userInfo)
     }
 
     func refreshQuotes(forControlEvents: UIControlEvents) {

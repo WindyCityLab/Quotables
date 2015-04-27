@@ -9,12 +9,13 @@ import Foundation
 
 
 func removeRegex(input: String, regex: String) -> String {
-    var str = String(input)
-    if let match = str.rangeOfString(regex, options: .RegularExpressionSearch){
-        str.removeRange(match)
-    }
+    let regex:NSRegularExpression  = NSRegularExpression(
+        pattern: regex,
+        options: NSRegularExpressionOptions.CaseInsensitive,
+        error: nil)!
 
-    return str.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+    let range = NSMakeRange(0, count(input))
+    return regex.stringByReplacingMatchesInString(input, options: NSMatchingOptions.allZeros, range:range, withTemplate: "")
 }
 
 func sanitizeQuote(quote: String) -> String {
@@ -38,7 +39,7 @@ func getPersonName(str: String) -> String {
     tagger.string = str
     tagger.enumerateTagsInRange(NSMakeRange(0, (str as NSString).length), scheme: NSLinguisticTagSchemeNameTypeOrLexicalClass, options: options) { (tag, tokenRange, sentenceRange, _) in
         let token = (str as NSString).substringWithRange(tokenRange)
-        if tag == POS_PERSON {
+        if tag == POS_PERSON || tag == POS_PLACE {
             personName = token
         }
     }

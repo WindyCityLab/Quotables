@@ -13,6 +13,7 @@ let EXCLUDE_CHARS = ["\n", "“", "”", "―"]
 
 let NLP_ENGLISH = "en"
 let POS_PERSON = "PersonalName"
+let POS_PLACE = "PlaceName"
 
 let SINGLE_SPACE = " "
 

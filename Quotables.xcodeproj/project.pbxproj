@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		881A99921AE82E9C00E03B8F /* CloudKitUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881A99911AE82E9C00E03B8F /* CloudKitUtil.swift */; };
 		8823107C1ADD50AA00016DBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8823107B1ADD50AA00016DBE /* AppDelegate.swift */; };
 		882310811ADD50AA00016DBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8823107F1ADD50AA00016DBE /* Main.storyboard */; };
 		882310831ADD50AA00016DBE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 882310821ADD50AA00016DBE /* Images.xcassets */; };
@@ -127,6 +128,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		881A99911AE82E9C00E03B8F /* CloudKitUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitUtil.swift; sourceTree = "<group>"; };
 		882310761ADD50AA00016DBE /* Quotables.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quotables.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8823107A1ADD50AA00016DBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8823107B1ADD50AA00016DBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -423,10 +425,11 @@
 		8864F3411ADD712E00CA0AA2 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				88245AA81AE5B66200BFF453 /* Constants.swift */,
 				8864F3421ADD714400CA0AA2 /* StringUtil.swift */,
 				88245AA41AE56D1E00BFF453 /* InterfaceUtil.swift */,
-				88245AA81AE5B66200BFF453 /* Constants.swift */,
 				8896C3D21AE8297C00F4A16F /* FrameworkUtil.swift */,
+				881A99911AE82E9C00E03B8F /* CloudKitUtil.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -628,6 +631,7 @@
 				882310BE1ADD514900016DBE /* DetailViewController.swift in Sources */,
 				882310BF1ADD514900016DBE /* RootViewController.swift in Sources */,
 				882310C11ADD515A00016DBE /* Quote.swift in Sources */,
+				881A99921AE82E9C00E03B8F /* CloudKitUtil.swift in Sources */,
 				88245AA51AE56D1E00BFF453 /* InterfaceUtil.swift in Sources */,
 				88245AA91AE5B66200BFF453 /* Constants.swift in Sources */,
 				8823107C1ADD50AA00016DBE /* AppDelegate.swift in Sources */,
