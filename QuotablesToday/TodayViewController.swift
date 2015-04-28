@@ -14,6 +14,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
     @IBOutlet var labelQuote: UILabel!
     @IBOutlet var buttonSave: UIButton!
+    @IBOutlet var buttonEdit: UIButton!
 
     var quote = Quote(className: "Quote")
 
@@ -40,6 +41,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                 if !quote.text.isEmpty {
                     labelQuote.text = "\(quote.text)\n\n\(quote.author)"
                     buttonSave.hidden = false
+                    buttonEdit.hidden = false
                 }
 
             }
@@ -49,12 +51,14 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     }
 
     @IBAction func onSaveButtonTap(sender: UIButton) {
+        println("foundBy == \(quote.foundBy)")
         quote.saveInBackgroundWithBlock { (success, error) -> Void in
             if error != nil && !success {
                 println("ERROR: \(error)")
             } else {
                 self.labelQuote.text = ""
                 self.buttonSave.hidden = true
+                self.buttonEdit.hidden = true
             }
         }
 

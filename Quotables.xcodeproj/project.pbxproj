@@ -86,6 +86,11 @@
 		8896C3D31AE8297C00F4A16F /* FrameworkUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8896C3D21AE8297C00F4A16F /* FrameworkUtil.swift */; };
 		8896C3D41AE8297C00F4A16F /* FrameworkUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8896C3D21AE8297C00F4A16F /* FrameworkUtil.swift */; };
 		8896C3D51AE8297C00F4A16F /* FrameworkUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8896C3D21AE8297C00F4A16F /* FrameworkUtil.swift */; };
+		88BD81041AEFDB1A0084D212 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88BD81031AEFDB1A0084D212 /* CloudKit.framework */; };
+		88BD81051AEFDB2A0084D212 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88BD81031AEFDB1A0084D212 /* CloudKit.framework */; };
+		88BD81071AEFDB340084D212 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88BD81031AEFDB1A0084D212 /* CloudKit.framework */; };
+		88BD810A1AEFEB2A0084D212 /* CloudKitUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881A99911AE82E9C00E03B8F /* CloudKitUtil.swift */; };
+		88BD810B1AEFEB2E0084D212 /* CloudKitUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881A99911AE82E9C00E03B8F /* CloudKitUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -175,6 +180,8 @@
 		8896C3CA1AE828D600F4A16F /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		8896C3CB1AE828D600F4A16F /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		8896C3D21AE8297C00F4A16F /* FrameworkUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameworkUtil.swift; sourceTree = "<group>"; };
+		88BD81031AEFDB1A0084D212 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		88BD81061AEFDB300084D212 /* QuotablesToday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = QuotablesToday.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +192,7 @@
 				882310BB1ADD511C00016DBE /* AudioToolbox.framework in Frameworks */,
 				882310B91ADD511800016DBE /* CFNetwork.framework in Frameworks */,
 				882310B71ADD511200016DBE /* CoreLocation.framework in Frameworks */,
+				88BD81041AEFDB1A0084D212 /* CloudKit.framework in Frameworks */,
 				882310B51ADD510C00016DBE /* MobileCoreServices.framework in Frameworks */,
 				882310B31ADD510700016DBE /* QuartzCore.framework in Frameworks */,
 				882310B11ADD510300016DBE /* Security.framework in Frameworks */,
@@ -216,6 +224,7 @@
 				882310D51ADD548C00016DBE /* AudioToolbox.framework in Frameworks */,
 				882310D61ADD548C00016DBE /* CFNetwork.framework in Frameworks */,
 				882310D71ADD548C00016DBE /* CoreLocation.framework in Frameworks */,
+				88BD81051AEFDB2A0084D212 /* CloudKit.framework in Frameworks */,
 				882310D81ADD548C00016DBE /* MobileCoreServices.framework in Frameworks */,
 				882310D91ADD548C00016DBE /* QuartzCore.framework in Frameworks */,
 				882310DA1ADD548C00016DBE /* Security.framework in Frameworks */,
@@ -238,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				882310F21ADD569F00016DBE /* NotificationCenter.framework in Frameworks */,
+				88BD81071AEFDB340084D212 /* CloudKit.framework in Frameworks */,
 				882311001ADD56AF00016DBE /* AudioToolbox.framework in Frameworks */,
 				882311011ADD56AF00016DBE /* CFNetwork.framework in Frameworks */,
 				882311021ADD56AF00016DBE /* CoreLocation.framework in Frameworks */,
@@ -325,6 +335,7 @@
 		8823109B1ADD50B000016DBE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				88BD81031AEFDB1A0084D212 /* CloudKit.framework */,
 				8896C3CA1AE828D600F4A16F /* Crashlytics.framework */,
 				8896C3CB1AE828D600F4A16F /* Fabric.framework */,
 				88245AA61AE5902D00BFF453 /* libcommonCrypto.dylib */,
@@ -407,6 +418,7 @@
 		882310F31ADD569F00016DBE /* QuotablesToday */ = {
 			isa = PBXGroup;
 			children = (
+				88BD81061AEFDB300084D212 /* QuotablesToday.entitlements */,
 				882310F61ADD569F00016DBE /* TodayViewController.swift */,
 				882310F81ADD569F00016DBE /* MainInterface.storyboard */,
 				882310F41ADD569F00016DBE /* Supporting Files */,
@@ -529,6 +541,9 @@
 							com.apple.InAppPurchase = {
 								enabled = 0;
 							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
 						};
 					};
 					8823108A1ADD50AA00016DBE = {
@@ -542,11 +557,22 @@
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
 							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
 						};
 					};
 					882310EF1ADD569F00016DBE = {
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = 3ZZDJNGJUA;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -657,6 +683,7 @@
 				882310E71ADD550600016DBE /* Quote.swift in Sources */,
 				8864F3451ADD721500CA0AA2 /* StringUtil.swift in Sources */,
 				88245AAB1AE5B69300BFF453 /* Constants.swift in Sources */,
+				88BD810A1AEFEB2A0084D212 /* CloudKitUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -669,6 +696,7 @@
 				8864F3441ADD71A800CA0AA2 /* StringUtil.swift in Sources */,
 				8896C3D51AE8297C00F4A16F /* FrameworkUtil.swift in Sources */,
 				88245AAA1AE5B69000BFF453 /* Constants.swift in Sources */,
+				88BD810B1AEFEB2E0084D212 /* CloudKitUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -918,6 +946,7 @@
 		882310FE1ADD569F00016DBE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = QuotablesToday/QuotablesToday.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -935,6 +964,7 @@
 					"$(SDKROOT)/usr/lib/system",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Quotables/Quotables-Bridging-Header.h";
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "Quotables/Quotables-Bridging-Header.h";
@@ -944,6 +974,7 @@
 		882310FF1ADD569F00016DBE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = QuotablesToday/QuotablesToday.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -957,6 +988,7 @@
 					"$(SDKROOT)/usr/lib/system",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Quotables/Quotables-Bridging-Header.h";
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "Quotables/Quotables-Bridging-Header.h";

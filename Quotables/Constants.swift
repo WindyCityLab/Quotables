@@ -26,3 +26,7 @@ let PARSE_APP_ID = "OL0i1OhDkRscie1SlaqRinQsn78CwY4gL1vThHaF"
 let PARSE_CLIENT_ID = "vIuRlq40qlDDCYffI8yeTd7aixpQB4vGVnKYoBKu"
 
 let APP_URL = "quotable://home"
+
+let USER_NAME = "userName"
+
+let SUITE_NAME = "group.com.windycitylabs.WindyCityLabs"

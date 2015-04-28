@@ -31,7 +31,7 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         self.navigationController!.navigationBar.tintColor = UIColor.whiteColor()
 
-//        processCloudKitRecordId(setupUser)
+        requestCloudKitPermission()
 
     }
 
@@ -50,9 +50,6 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.title = "Quotables"
     }
 
-    func setupUser(userInfo: String) {
-        println(userInfo)
-    }
 
     func refreshQuotes(forControlEvents: UIControlEvents) {
         loadQuotes()

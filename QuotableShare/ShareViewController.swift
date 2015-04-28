@@ -15,15 +15,18 @@ class ShareViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var fieldQuote: UITextView!
     @IBOutlet var fieldAuthor: UITextField!
 
+    var currentQuote: Quote = Quote(className: "Quote")
+
     override func viewDidLoad() {
         super.viewDidLoad()
         registerFrameworks()
+
         fieldAuthor.delegate = self
 
         if let text = UIPasteboard.generalPasteboard().string {
-            let quote = Quote.makeQuote(text)
-            fieldQuote.text = quote.text
-            fieldAuthor.text = quote.author
+            currentQuote = Quote.makeQuote(text)
+            fieldQuote.text = currentQuote.text
+            fieldAuthor.text = currentQuote.author
         }
 
         fieldAuthor.becomeFirstResponder()
@@ -49,10 +52,9 @@ class ShareViewController: UIViewController, UITextFieldDelegate {
     }
 
     func saveQuote() {
-        let quote = Quote()
-        quote.text = fieldQuote.text
-        quote.author = fieldAuthor.text
-        quote.saveInBackgroundWithBlock { (success, error) -> Void in
+        currentQuote.text = fieldQuote.text
+        currentQuote.author = fieldAuthor.text
+        currentQuote.saveInBackgroundWithBlock { (success, error) -> Void in
             if error != nil {
                 println(error)
             }

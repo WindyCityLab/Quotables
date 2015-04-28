@@ -9,13 +9,33 @@
 import Foundation
 import CloudKit
 
-func processCloudKitRecordId(completionFunc: String -> Void) {
+func requestCloudKitPermission() {
+    CKContainer.defaultContainer().requestApplicationPermission(CKApplicationPermissions.PermissionUserDiscoverability,
+        completionHandler: {
+            applicationPermissionStatus, error in
+             processCloudKitRecordId()
+    })
+}
+
+func processCloudKitRecordId() {
     let defaultContainer = CKContainer.defaultContainer()
     defaultContainer.fetchUserRecordIDWithCompletionHandler { (recordId, error) -> Void in
-        if error != nil {
+        if error == nil {
             defaultContainer.discoverUserInfoWithUserRecordID(recordId, completionHandler: {userInfo, error in
-                completionFunc("firstName: \(userInfo.firstName) lastName: \(userInfo.lastName)")
+                if error == nil {
+                    let userName = "\(userInfo.firstName.capitalizedString) \(userInfo.lastName.capitalizedString)"
+                    if let userDefaults = NSUserDefaults(suiteName: SUITE_NAME) {
+                        userDefaults.setObject(userName, forKey: USER_NAME)
+                        userDefaults.synchronize()
+                    }
+                } else {
+                    println("CloudKit Error :: \(error)")
+                }
             })
+        } else {
+            println("CloudKit Error :: \(error)")
         }
     }
 }
+
+
