@@ -74,18 +74,30 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableQuotes.dequeueReusableCellWithIdentifier("QuoteCell", forIndexPath: indexPath) as! UITableViewCell
         let quote = quotes[indexPath.row] as! Quote
 
-        let labelQuote = self.view.viewWithTag(100) as! UILabel
-        labelQuote.text = quote.text
-
-        let labelAuthor = self.view.viewWithTag(110) as! UILabel
-        labelAuthor.text = quote.author
+        let labelQuote = setLabelTextWithTag(100, text: quote.text)
+        let labelAuthor = setLabelTextWithTag(110, text: quote.author)
+        let labelFoundBy = setLabelTextWithTag(120, text: getAttribution(quote))
 
         if increaseFontSize {
             adjustFontSize(labelQuote, 28)
             adjustFontSize(labelAuthor, 24)
+            adjustFontSize(labelAuthor, 22)
         }
 
         return cell
+    }
+
+    func getAttribution(quote: Quote) -> String {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "MMM d, YYYY"
+        let firstName = quote.foundBy.componentsSeparatedByString(" ")[0]
+        return "found by \(firstName) on \(dateFormatter.stringFromDate(quote.createdAt!))"
+    }
+
+    func setLabelTextWithTag(tag: Int, text: String) -> UILabel {
+        let label = self.view.viewWithTag(tag) as! UILabel
+        label.text = text
+        return label
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
